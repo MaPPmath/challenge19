@@ -1,7 +1,36 @@
 \documentclass{puzzlehunt}
+\title{Example Puzzlehunt Class Document}
+\author{Steven Clontz}
+\date{\today}
+\setPuzzlehuntTitleLogo{example-image-16x9.pdf}
+
 
 \begin{document}
 
-  foo
+
+\frontmatter % roman page numbers (iv)
+
+\puzzlehuntTitle % Print title page.
+\tableofcontents % Print table of contents
+
+
+\mainmatter % arabic page numbers (4)
+
+% Parts can be ignored, but can be useful when creating a "master" booklet
+% containing several variations of the puzzlehunt materials
+\part{Organizers' Booklet}
+
+% Generally, there should be a rules chapter, and one chapter for each puzzle.
+\chapter{The Rules}
+Lorem ipsum...
+
+% An example puzzle.
+\chapter{Puzzle 1: The First Puzzle}
+A brief description of the puzzle.
+
+% Each section represents a worksheet associated with the puzzle.
+\section{Main Puzzle}
+
+
 
 \end{document}
