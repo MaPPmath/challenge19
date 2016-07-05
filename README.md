@@ -1,6 +1,11 @@
-MaPP High School Challenge '16
-==============================
+puzzlehunt.cls
+==============
 
-Repository of assets related to the Spring 2016 MaPP High School Challenge.
+A LaTeX document class for puzzlehunt booklets. Written by
+[Steven Clontz](http://clontz.org) for
+[Mathematical Puzzle Programs](http://mappmath.org) and other projects,
+including yours.
 
-See booklet.pdf or visit <http://mappmath.org> for more information!
+## License
+
+MIT
