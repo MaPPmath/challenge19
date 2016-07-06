@@ -1,4 +1,0 @@
-\contentsline {part}{I\hspace {1em}Organizers' Booklet}{1}
-\contentsline {chapter}{\numberline {1}The Rules}{2}
-\contentsline {chapter}{\numberline {2}Puzzle 1: The First Puzzle}{3}
-\contentsline {section}{\numberline {2.1}Main Puzzle}{3}

@@ -37,10 +37,13 @@
 \usepackage{cmbright}
 \usepackage[T1]{fontenc}
 
-% Title Page
+
+% Custom Title Page
+
 \newcommand{\puzzlehuntTitleLogo}{example-image-16x10.pdf}% uses mwe image
 \newcommand{\setPuzzlehuntTitleLogo}[1]{\renewcommand{\puzzlehuntTitleLogo}{#1}}
-\newcommand{\puzzlehuntTitle}{%
+
+\newcommand{\puzzlehuntTitlePage}{%
 \begin{titlepage}
   \begin{center}
 	\includegraphics[width=0.6\textwidth]{\puzzlehuntTitleLogo}\par\vspace{1cm}
@@ -54,6 +57,23 @@
 }
 
 
+% Custom Chapter/Section Headings
+\RequirePackage{titlesec}
+
+\newcommand{\puzzlehuntChapterLogo}{example-image-16x10.pdf}% uses mwe image
+\newcommand{\setPuzzlehuntChapterLogo}[1]{\renewcommand{\puzzlehuntChapterLogo}{#1}}
+
+\titleformat{\chapter}[hang]
+{} % format
+{\includegraphics[width=0.33\textwidth]{\puzzlehuntChapterLogo}} % label
+{0pt} % sep
+{} % before-code
+[] % after-code
+\titlespacing{\chapter}{0pt}{0pt}{0pt}
+
+
+% Lorem ipsum generator (useful for mockups)
+\RequirePackage{lipsum}
 
 
 
