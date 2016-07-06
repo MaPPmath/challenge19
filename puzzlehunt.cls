@@ -40,13 +40,13 @@
 
 % Custom Title Page
 
-\newcommand{\puzzlehuntTitleLogo}{example-image-16x10.pdf}% uses mwe image
-\newcommand{\setPuzzlehuntTitleLogo}[1]{\renewcommand{\puzzlehuntTitleLogo}{#1}}
+\newcommand{\puzzlehuntBannerLogo}{example-image-16x10.pdf}% uses mwe image
+\newcommand{\setPuzzlehuntBannerLogo}[1]{\renewcommand{\puzzlehuntBannerLogo}{#1}}
 
 \newcommand{\puzzlehuntTitlePage}{%
 \begin{titlepage}
   \begin{center}
-	\includegraphics[width=0.6\textwidth]{\puzzlehuntTitleLogo}\par\vspace{1cm}
+	\includegraphics[width=0.6\textwidth]{\puzzlehuntBannerLogo}\par\vspace{1cm}
 	{\Huge\textbf{\@title} \par}
 	\vspace{2em}
 	{\LARGE\textit{\@author} \par}
@@ -58,18 +58,46 @@
 
 
 % Custom Chapter/Section Headings
-\RequirePackage{titlesec}
+\RequirePackage[explicit]{titlesec}
+\RequirePackage{tikz}
 
-\newcommand{\puzzlehuntChapterLogo}{example-image-16x10.pdf}% uses mwe image
-\newcommand{\setPuzzlehuntChapterLogo}[1]{\renewcommand{\puzzlehuntChapterLogo}{#1}}
+\newcommand{\puzzlehuntSquareLogo}{example-image-1x1.pdf}% uses mwe image
+\newcommand{\setPuzzlehuntSquareLogo}[1]{\renewcommand{\puzzlehuntSquareLogo}{#1}}
 
-\titleformat{\chapter}[hang]
-{} % format
-{\includegraphics[width=0.33\textwidth]{\puzzlehuntChapterLogo}} % label
-{0pt} % sep
-{} % before-code
-[] % after-code
+\titleformat{\chapter}[display]
+{\normalfont}
+{
+  \newpage
+}
+{0pt}
+{
+  \Large\bfseries
+  \includegraphics[height=1.5in]{\puzzlehuntSquareLogo}
+  \begin{tabular}[b]{l}
+    {\Large \@title \vspace{0.1in}} \\
+    {\Huge \bfseries #1 \vspace{0.1in}}
+  \end{tabular}
+  \vspace{1em}
+}
 \titlespacing{\chapter}{0pt}{0pt}{0pt}
+
+\titleformat{\section}[display]
+{\normalfont}
+{
+  \newpage
+}
+{0pt}
+{
+  \Large\bfseries
+  \includegraphics[height=1.2in]{\puzzlehuntSquareLogo}
+  \begin{tabular}[b]{l}
+    {\Large \@title \vspace{0.1in}} \\
+    {\Huge \bfseries ChapterName \vspace{0.1in}} \\
+    {\LARGE \bfseries #1 \vspace{0.1in}}
+  \end{tabular}
+  \vspace{1em}
+}
+\titlespacing{\section}{0pt}{0pt}{0pt}
 
 
 % Lorem ipsum generator (useful for mockups)
