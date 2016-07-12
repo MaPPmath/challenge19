@@ -3,7 +3,6 @@
 \title{Example Document for \texttt{puzzlehunt.cls}}
 \author{Steven Clontz}
 \date{\today}
-\setPuzzlehuntBannerLogo{example-image-16x9.pdf}
 
 
 \begin{document}
@@ -11,26 +10,52 @@
 
 \frontmatter % roman page numbers (iv)
 
-\puzzlehuntTitlePage % Print title page.
-\tableofcontents % Print table of contents
+\phTitlePage % Print title page.
+\phTableOfContents % Print table of contents
 
 
 \mainmatter % arabic page numbers (4)
 
-% Parts can be ignored, but can be useful when creating a "master" booklet
-% containing several variations of the puzzlehunt materials
-\part{Organizers' Booklet}
 
-% Generally, there should be a rules chapter, and one chapter for each puzzle.
-\chapter{The Rules}
-\lipsum[4-57]
+\phPart{Organizers' Booklet}
 
-% An example puzzle.
-\chapter{The First Puzzle}
-A brief description of the puzzle.
+\phChapter{The Rules}
+\lipsum[4-9]
+\phSection{Foobar}
+\lipsum[10-13]
 
-% Each section represents a worksheet associated with the puzzle.
-\section{Basic Puzzle 3}
+\phChapter{An Excellent Puzzle}
+\lipsum[13-20]
+\phWorksheet{Basic Puzzle 3}
+\lipsum[6-10]
+\phWorksheet{EXTRA Puzzle 3}
+\lipsum[6-10]
+
+
+\phPart{Player's Booklet}
+
+\phChapter{The Rules}
+\lipsum[4-9]
+\phSection{Foobar}
+\lipsum[10-13]
+
+\phChapter{An Excellent Puzzle}
+\lipsum[13-20]
+\phWorksheet{Basic Puzzle 3}
+\lipsum[6-10]
+\phWorksheet{EXTRA Puzzle 3}
+\lipsum[6-10]
+
+\phChapter{The Rules}
+\lipsum[4-9]
+\phSection{Foobar}
+\lipsum[10-13]
+
+\phChapter{An Excellent Puzzle}
+\lipsum[13-20]
+\phWorksheet{Basic Puzzle 3}
+\lipsum[6-10]
+\phWorksheet{EXTRA Puzzle 3}
 \lipsum[6-10]
 
 
