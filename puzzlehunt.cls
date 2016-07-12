@@ -16,7 +16,7 @@
 \ProcessOptions\relax
 
 % Load base
-\LoadClass[11pt,onesided,openany,letterpaper]{book}
+\LoadClass[11pt,openany,letterpaper]{book}
 
 % Page formatting
 \RequirePackage[margin=0.8in]{geometry}
