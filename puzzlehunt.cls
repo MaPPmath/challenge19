@@ -41,7 +41,7 @@
 % Custom Title Page
 
 \newcommand{\phBannerLogo}{example-image-16x10.pdf}% uses mwe image
-\newcommand{\setPhBannerLogo}[1]{\renewcommand{\phBannerLogo}{#1}}
+\newcommand{\phSetBannerLogo}[1]{\renewcommand{\phBannerLogo}{#1}}
 
 \newcommand{\phTitlePage}{%
 \begin{titlepage}
