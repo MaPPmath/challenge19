@@ -16,7 +16,7 @@
 \ProcessOptions\relax
 
 % Load base
-\LoadClass[11pt,openany,letterpaper]{book}
+\LoadClass[11pt,openany,oneside,letterpaper]{book}
 
 % Page formatting
 \RequirePackage[margin=0.8in]{geometry}
@@ -97,7 +97,7 @@
 }
 
 \newcommand{\phSetSectionSimpleStyle}[1]{
-  \titleformat{\section}[hang]{\normalfont\Large\bfseries}{\thesection}{1em}{#1}
+  \titleformat{\section}[hang]{\normalfont\Large\bfseries}{}{0pt}{#1}
   \titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 }
 
@@ -116,6 +116,8 @@
 % Lorem ipsum generator (useful for mockups)
 \RequirePackage{lipsum}
 
+% Hyperlinks
+\RequirePackage[hidelinks]{hyperref}
 
 
 % that's all folks
