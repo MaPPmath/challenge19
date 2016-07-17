@@ -30,6 +30,10 @@
 % Graphics
 \RequirePackage{graphicx} % to display images
 
+% Logicpuzzle package
+\RequirePackage{logicpuzzle}
+\let\titleformat\undefined % to avoid namespace collision with titlesec
+
 % Datetime formatting
 \RequirePackage[yyyymmdd,hhmmss]{datetime}
 
