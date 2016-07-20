@@ -117,6 +117,26 @@
 
 
 
+% Example environment
+\newsavebox{\@phExampleBox}
+\newenvironment{phExample}{
+  \begin{center}
+    \begin{lrbox}{\@phExampleBox}
+      \begin{minipage}{.9\linewidth}
+        \vspace{1em}
+        \begin{center}
+          \begin{minipage}{.9\linewidth}
+            \textbf{Example}
+}{
+          \end{minipage}
+        \end{center}
+        \vspace{1em}
+      \end{minipage}
+    \end{lrbox}\fbox{\usebox{\@phExampleBox}}
+  \end{center}
+}
+
+
 % Lorem ipsum generator (useful for mockups)
 \RequirePackage{lipsum}
 
