@@ -136,6 +136,15 @@
   \end{center}
 }
 
+% Box to fill in letters
+\newcommand{\phLetterBox}[2]{
+  \begin{tikzpicture}
+    \draw (0,0) -- (2em,0) -- (2em,2em) -- (0,2em) -- (0,0);
+    \node at (1em,-1em) {#1};
+    \node at (1em,1em) {#2};
+  \end{tikzpicture}
+}
+
 
 % Lorem ipsum generator (useful for mockups)
 \RequirePackage{lipsum}
