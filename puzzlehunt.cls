@@ -72,17 +72,35 @@
 \newcommand{\phSquareLogo}{example-image-1x1.pdf}% uses mwe image
 \newcommand{\phSetSquareLogo}[1]{\renewcommand{\phSquareLogo}{#1}}
 
-\titleformat{\chapter}[display]{}{}{0pt}
-{
-  \Large\bfseries
-  \includegraphics[height=1.2in]{\phSquareLogo}
-  \begin{tabular}[b]{l}
-    {\Large \@title \vspace{0.1in}} \\
-    {\Huge \bfseries #1 \vspace{0.25in}}
-  \end{tabular}
-  \vspace{1em}
+\newcommand{\phSetChapterDefaultStyle}[1]{
+  \titleformat{\chapter}[display]{}{}{0pt}
+  {
+    \Large\bfseries
+    \includegraphics[height=1.2in]{\phSquareLogo}
+    \begin{tabular}[b]{l}
+      {\Large \@title \vspace{0.1in}} \\
+      {\Huge \bfseries #1 \vspace{0.25in}}
+    \end{tabular}
+    \vspace{1em}
+  }
+  \titlespacing{\chapter}{0pt}{0pt}{0pt}
 }
-\titlespacing{\chapter}{0pt}{0pt}{0pt}
+\newcommand{\phSetChapterWorksheetStyle}[2]{
+  \titleformat{\chapter}[display]{}{}{0pt}
+  {
+    \Large\bfseries
+    \includegraphics[height=1.2in]{\phSquareLogo}
+    \begin{tabular}[b]{l}
+      {\Large \@title \vspace{0.1in}} \\
+      {\Huge \bfseries #1 \vspace{0.1in}} \\
+      {\LARGE \bfseries #2 \vspace{0.05in}}
+    \end{tabular}
+    \vspace{1em}
+  }
+  \titlespacing{\section}{0pt}{0pt}{0pt}
+}
+
+\phSetChapterDefaultStyle{}
 
 
 \newcommand{\phSetSectionFancyStyle}[1]{
@@ -111,7 +129,8 @@
 \newcommand{\phSetChapterName}[1]{\renewcommand{\phChapterName}{#1}}
 
 \newcommand{\phPart}[1]{\part{#1}}
-\newcommand{\phChapter}[1]{\chapter{#1}\phSetChapterName{#1}}
+\newcommand{\phChapter}[1]{\phSetChapterDefaultStyle{#1}\chapter{#1}\phSetChapterName{#1}}
+\newcommand{\phChapterWorksheet}[2]{\phSetChapterWorksheetStyle{#1}{#2}\chapter{#1}\phSetChapterName{#1}}
 \newcommand{\phSection}[1]{\phSetSectionSimpleStyle{#1}\section{#1}}
 \newcommand{\phWorksheet}[1]{\newpage\phSetSectionFancyStyle{#1}\section{#1}}
 
@@ -136,14 +155,17 @@
   \end{center}
 }
 
+
 % Box to fill in letters
 \newcommand{\phLetterBox}[2]{
   \begin{tikzpicture}
-    \draw (0,0) -- (2em,0) -- (2em,2em) -- (0,2em) -- (0,0);
+    \fill[white] (0,-2em) rectangle (2em,2em);
+    \draw (0,0) rectangle (2em,2em);
     \node at (1em,-1em) {#1};
     \node at (1em,1em) {#2};
   \end{tikzpicture}
 }
+
 
 
 % Lorem ipsum generator (useful for mockups)
@@ -156,6 +178,7 @@
 % Watermarks
 \RequirePackage{draftwatermark}
 \SetWatermarkText{}
+\SetWatermarkLightness{0.9}
 \newcommand{\phMarkDraft}{
   \SetWatermarkText{DRAFT \today}
   \SetWatermarkScale{0.5}
