@@ -76,6 +76,7 @@
   \titleformat{\chapter}[display]{}{}{0pt}
   {
     \Large\bfseries
+    \vspace*{-1.5em}
     \includegraphics[height=1.2in]{\phSquareLogo}
     \begin{tabular}[b]{l}
       {\Large \@title \vspace{0.1in}} \\
@@ -83,21 +84,21 @@
     \end{tabular}
     \vspace{1em}
   }
-  \titlespacing{\chapter}{0pt}{0pt}{0pt}
+  \titlespacing*{\chapter}{0pt}{*0}{0pt}
 }
 \newcommand{\phSetChapterWorksheetStyle}[2]{
   \titleformat{\chapter}[display]{}{}{0pt}
   {
     \Large\bfseries
+    \vspace*{-1.5em}
     \includegraphics[height=1.2in]{\phSquareLogo}
     \begin{tabular}[b]{l}
       {\Large \@title \vspace{0.1in}} \\
       {\Huge \bfseries #1 \vspace{0.1in}} \\
       {\LARGE \bfseries #2 \vspace{0.05in}}
     \end{tabular}
-    \vspace{1em}
   }
-  \titlespacing{\section}{0pt}{0pt}{0pt}
+  \titlespacing*{\chapter}{0pt}{*0}{0pt}
 }
 
 \phSetChapterDefaultStyle{}
@@ -122,6 +123,10 @@
   \titleformat{\section}[hang]{\normalfont\Large\bfseries}{}{0pt}{#1}
   \titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 }
+\newcommand{\phSetSectionEmptyStyle}[1]{
+  \titleformat{\section}[hang]{}{}{0pt}{}
+  \titlespacing*{\section}{0pt}{0pt}{0pt}
+}
 
 \phSetSectionSimpleStyle{}
 
@@ -130,7 +135,7 @@
 
 \newcommand{\phPart}[1]{\part{#1}}
 \newcommand{\phChapter}[1]{\phSetChapterDefaultStyle{#1}\chapter{#1}\phSetChapterName{#1}}
-\newcommand{\phChapterWorksheet}[2]{\phSetChapterWorksheetStyle{#1}{#2}\chapter{#1}\phSetChapterName{#1}}
+\newcommand{\phChapterWorksheet}[2]{\phSetChapterWorksheetStyle{#1}{#2}\chapter{#1}\phSetChapterName{#1}\phSetSectionEmptyStyle{#2}\section{#2}}
 \newcommand{\phSection}[1]{\phSetSectionSimpleStyle{#1}\section{#1}}
 \newcommand{\phWorksheet}[1]{\newpage\phSetSectionFancyStyle{#1}\section{#1}}
 
@@ -178,7 +183,7 @@
 % Watermarks
 \RequirePackage{draftwatermark}
 \SetWatermarkText{}
-\SetWatermarkLightness{0.9}
+\SetWatermarkLightness{0.95}
 \newcommand{\phMarkDraft}{
   \SetWatermarkText{DRAFT \today}
   \SetWatermarkScale{0.5}
