@@ -30,10 +30,6 @@
 % Graphics
 \RequirePackage{graphicx} % to display images
 
-% Logicpuzzle package
-\RequirePackage{logicpuzzle}
-\let\titleformat\undefined % to avoid namespace collision with titlesec
-
 % Datetime formatting
 \RequirePackage[yyyymmdd,hhmmss]{datetime}
 
@@ -60,7 +56,7 @@
 \end{titlepage}
 }
 
-\newcommand{\phTableOfContents}{\tableofcontents}
+\newcommand{\phTableOfContents}{\phSetChapterName{Table of Contents}\tableofcontents}
 
 
 % Custom Chapter/Section Headings
@@ -75,12 +71,12 @@
 \newcommand{\phSetChapterDefaultStyle}[1]{
   \titleformat{\chapter}[display]{}{}{0pt}
   {
-    \Large\bfseries
+    \Large
     \vspace*{-1.5em}
     \includegraphics[height=1.2in]{\phSquareLogo}
     \begin{tabular}[b]{l}
       {\Large \@title \vspace{0.1in}} \\
-      {\Huge \bfseries #1 \vspace{0.25in}}
+      {\Huge \textbf{\phChapterName} \vspace{0.25in}}
     \end{tabular}
     \vspace{1em}
   }
@@ -89,13 +85,13 @@
 \newcommand{\phSetChapterWorksheetStyle}[2]{
   \titleformat{\chapter}[display]{}{}{0pt}
   {
-    \Large\bfseries
+    \Large
     \vspace*{-1.5em}
     \includegraphics[height=1.2in]{\phSquareLogo}
     \begin{tabular}[b]{l}
       {\Large \@title \vspace{0.1in}} \\
-      {\Huge \bfseries #1 \vspace{0.1in}} \\
-      {\LARGE \bfseries #2 \vspace{0.05in}}
+      {\Huge \textbf{\phChapterName} \vspace{0.1in}} \\
+      {\LARGE #2 \vspace{0.05in}}
     \end{tabular}
   }
   \titlespacing*{\chapter}{0pt}{*0}{0pt}
@@ -107,12 +103,12 @@
 \newcommand{\phSetSectionFancyStyle}[1]{
   \titleformat{\section}[display]{}{}{0pt}
   {
-    \Large\bfseries
+    \Large
     \includegraphics[height=1.2in]{\phSquareLogo}
     \begin{tabular}[b]{l}
       {\Large \@title \vspace{0.1in}} \\
-      {\Huge \bfseries \phChapterName \vspace{0.1in}} \\
-      {\LARGE \bfseries #1 \vspace{0.05in}}
+      {\Huge \textbf{\phChapterName} \vspace{0.1in}} \\
+      {\LARGE #1 \vspace{0.05in}}
     \end{tabular}
     \vspace{1em}
   }
@@ -134,23 +130,43 @@
 \newcommand{\phSetChapterName}[1]{\renewcommand{\phChapterName}{#1}}
 
 \newcommand{\phPart}[1]{\part{#1}}
-\newcommand{\phChapter}[1]{\phSetChapterDefaultStyle{#1}\chapter{#1}\phSetChapterName{#1}}
-\newcommand{\phChapterWorksheet}[2]{\phSetChapterWorksheetStyle{#1}{#2}\chapter{#1}\phSetChapterName{#1}\phSetSectionEmptyStyle{#2}\section{#2}}
-\newcommand{\phSection}[1]{\phSetSectionSimpleStyle{#1}\section{#1}}
-\newcommand{\phWorksheet}[1]{\newpage\phSetSectionFancyStyle{#1}\section{#1}}
+\newcommand{\phChapter}[1]{%
+  \phSetChapterName{#1}%
+  \phSetChapterDefaultStyle{#1}%
+  \chapter{#1}%
+}
+\newcommand{\phChapterWorksheet}[2]{%
+  \phSetChapterName{#1}%
+  \phSetChapterWorksheetStyle{#1}{#2}%
+  \chapter{#1}%
+  \phSetSectionEmptyStyle{#2}%
+  \section{#2}%
+}
+\newcommand{\phSection}[1]{%
+  \phSetSectionSimpleStyle{#1}
+  \section{#1}%
+}
+\newcommand{\phWorksheet}[1]{%
+  \newpage%
+  \phSetSectionFancyStyle{#1}%
+  \section{#1}%
+}
 
+
+
+\setlength{\parindent}{0pt}
 
 
 % Example environment
 \newsavebox{\@phExampleBox}
-\newenvironment{phExample}{
+\newenvironment{phExample}[1]{
   \begin{center}
     \begin{lrbox}{\@phExampleBox}
       \begin{minipage}{.9\linewidth}
         \vspace{1em}
         \begin{center}
           \begin{minipage}{.9\linewidth}
-            \textbf{Example}
+            \textbf{#1}%
 }{
           \end{minipage}
         \end{center}
@@ -162,6 +178,7 @@
 
 
 % Box to fill in letters
+\RequirePackage{tikz}
 \newcommand{\phLetterBox}[2]{
   \begin{tikzpicture}
     \fill[white] (0,-2em) rectangle (2em,2em);
@@ -178,6 +195,7 @@
 
 % Hyperlinks
 \RequirePackage[hidelinks]{hyperref}
+\urlstyle{same}
 \newcommand{\phUrl}[1]{\(\langle\)\url{#1}\(\rangle\)}
 
 % Watermarks

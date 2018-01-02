@@ -2,100 +2,87 @@
 
 \title{Example Document for \texttt{puzzlehunt.cls}}
 \author{Steven Clontz}
-\date{\today}
 
+\phMarkDraft % comment out to remove draft watermark
 
-\phMarkDraft
-
+% replace these with your image files
+\phSetBannerLogo{example-image-16x10.pdf}
+\phSetSquareLogo{example-image-1x1.pdf}
 
 \begin{document}
 
 
-\frontmatter % roman page numbers (iv)
+\frontmatter % Sets roman page numbers (iv)
 
-\phTitlePage % Print title page.
-\phTableOfContents % Print table of contents
-
-
-\mainmatter % arabic page numbers (4)
+\phTitlePage % Prints title page.
+\phTableOfContents % Prints table of contents
 
 
-\phPart{Organizers' Booklet}
+\mainmatter % Sets arabic page numbers (4)
 
-\phChapter{The Rules}
+\phPart{About}
 
-\phUrl{http://mappmath.org}
+\phChapter{Using this document}
 
-\lipsum[4-9]
-\phLetterBox{x}{y}\phLetterBox{x}{y}
-\phSection{Foobar}
-\lipsum[10-13]
+  This document reflects all the features/functionality of
+  \texttt{puzzlehunt.cls}. To see how to use these features, compare
+  the PDF with the provided \texttt{.tex} file.
 
-\phChapter{An Excellent Puzzle}
-\lipsum[13-20]
-\phWorksheet{Basic Puzzle 3}
-\lipsum[6-10]
-\phWorksheet{EXTRA Puzzle 3}
-\lipsum[6-10]
+\phPart{Features}
 
+\phChapter{Plain chapter}
 
-\phPart{Player's Booklet}
+  \lipsum[10-13]
 
-\phChapter{The Rules}
-\lipsum[4-9]
-\phSection{Foobar}
-\lipsum[10-13]
+\phChapter{Chapter with sections}
 
-\phChapter{An Excellent Puzzle}
-\lipsum[13-20]
-\phWorksheet{Basic Puzzle 3}
-\lipsum[6-10]
-\phWorksheet{EXTRA Puzzle 3}
-\lipsum[6-10]
+  \lipsum[3]
 
-\phChapter{The Rules}
-\lipsum[4-9]
-\phSection{Foobar}
-\lipsum[10-13]
-\begin{phExample}
-  Here's an example environment. Do you like? \lipsum[2]
-\end{phExample}
+  \phSection{A section}
 
-\phChapter{An Excellent Puzzle}
-\lipsum[13-20]
-\phWorksheet{Basic Puzzle 3}
-\lipsum[6-10]
-\phWorksheet{EXTRA Puzzle 3}
-\lipsum[6-7]
+  \lipsum[4]
 
-\begin{center}
-\begin{kendoku}\framearea{black}{\tikzpath{1}{1}{8,8,6,2,6,2,4,4}}
-\framearea{black}{\tikzpath{1}{3}{8,6,2,4}}
-\framearea{black}{\tikzpath{1}{4}{8,8,6,2,2,4}}
-\framearea{black}{\tikzpath{2}{2}{8,8,6,6,2,4,2,4}}
-\framearea{black}{\tikzpath{2}{4}{8,8,6,2,2,4}}
-\framearea{black}{\tikzpath{3}{1}{8,8,6,2,2,4}}
-\framearea{black}{\tikzpath{3}{4}{8,8,6,6,2,4,2,4}}
-\framearea{black}{\tikzpath{4}{1}{8,6,6,2,4,4}}
-\framearea{black}{\tikzpath{4}{2}{8,6,6,2,4,4}}
-\framearea{black}{\tikzpath{4}{3}{8,8,6,2,2,4}}
-\framearea{black}{\tikzpath{5}{3}{8,6,2,4}}
-\framearea{black}{\tikzpath{5}{4}{8,6,2,4}}
-\framearea{black}{\tikzpath{5}{5}{8,6,2,4}}
-\setrule{1}{2}{8\times}
-\setrule{1}{3}{5}
-\setrule{1}{5}{4+}
-\setrule{2}{3}{60\times}
-\setrule{2}{5}{2\div}
-\setrule{3}{2}{2-}
-\setrule{3}{5}{75\times}
-\setrule{4}{1}{8+}
-\setrule{4}{2}{1-}
-\setrule{4}{4}{2\times}
-\setrule{5}{3}{1}
-\setrule{5}{5}{2}
-\end{kendoku}
-\end{center}
+  \phSection{Another section}
+
+  \lipsum[5-6]
+
+\phChapter{Chapter with worksheets}
+
+  \lipsum[1-3]
+
+  \phWorksheet{First worksheet}
+
+  \lipsum[4-7]
+
+  \phWorksheet{Worksheet II}
+
+  \lipsum[8-11]
+
+\phChapterWorksheet{Chapter beginning with Worksheet}{Its worksheet}
+
+  \lipsum[5-7]
+
+  \phWorksheet{Another worksheet}
+
+  \lipsum[80-82]
+
+\phChapter{Other Features}
+
+  \phSection{URL linking}
+
+    \phUrl{http://mappmath.org}
+
+  \phSection{Letter boxes}
+
+  \begin{center}
+    \phLetterBox{x}{y}\phLetterBox{}{}\phLetterBox{}{y}\phLetterBox{x}{}
+  \end{center}
+
+  \phSection{Example environment}
+
+  \begin{phExample}{Example}
+    \lipsum[2]
+  \end{phExample}
 
 
 
