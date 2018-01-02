@@ -5,7 +5,7 @@
 %     \documentclass{puzzlehunt}
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{puzzlehunt}[2016/07/05 PUZZLEHUNT]
+\ProvidesClass{puzzlehunt}[2018/01/02 PUZZLEHUNT]
 
 % No fancy options, please
 \DeclareOption*{
