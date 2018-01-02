@@ -38,6 +38,15 @@
 \usepackage[T1]{fontenc}
 
 
+% Handle meta info
+
+\newcommand{\phTitle}{Unknown Title}
+\newcommand{\phSetTitle}[1]{\renewcommand{\phTitle}{#1}\title{#1}}
+\newcommand{\phAuthor}{Unknown Title}
+\newcommand{\phSetAuthor}[1]{\renewcommand{\phAuthor}{#1}\author{#1}}
+\newcommand{\phUseAuthorWithTitle}{\renewcommand{\phTitle}{\@title{} | \@author}}
+
+
 % Custom Title Page
 
 \newcommand{\phBannerLogo}{example-image-16x10.pdf}% uses mwe image
@@ -51,7 +60,7 @@
 	\vspace{2em}
 	{\LARGE\textit{\@author} \par}
 	\vfill
-	{\large Version \@date \par}
+	{\large Version \today \par}
   \end{center}
 \end{titlepage}
 }
@@ -75,7 +84,7 @@
     \vspace*{-1.5em}
     \includegraphics[height=1.2in]{\phSquareLogo}
     \begin{tabular}[b]{l}
-      {\Large \@title \vspace{0.1in}} \\
+      {\Large \phTitle \vspace{0.1in}} \\
       {\Huge \textbf{\phChapterName} \vspace{0.25in}}
     \end{tabular}
     \vspace{1em}
@@ -89,7 +98,7 @@
     \vspace*{-1.5em}
     \includegraphics[height=1.2in]{\phSquareLogo}
     \begin{tabular}[b]{l}
-      {\Large \@title \vspace{0.1in}} \\
+      {\Large \phTitle \vspace{0.1in}} \\
       {\Huge \textbf{\phChapterName} \vspace{0.1in}} \\
       {\LARGE #2 \vspace{0.05in}}
     \end{tabular}
@@ -106,7 +115,7 @@
     \Large
     \includegraphics[height=1.2in]{\phSquareLogo}
     \begin{tabular}[b]{l}
-      {\Large \@title \vspace{0.1in}} \\
+      {\Large \phTitle \vspace{0.1in}} \\
       {\Huge \textbf{\phChapterName} \vspace{0.1in}} \\
       {\LARGE #1 \vspace{0.05in}}
     \end{tabular}
@@ -126,7 +135,7 @@
 
 \phSetSectionSimpleStyle{}
 
-\newcommand{\phChapterName}{\@title}
+\newcommand{\phChapterName}{Unknown Chapter}
 \newcommand{\phSetChapterName}[1]{\renewcommand{\phChapterName}{#1}}
 
 \newcommand{\phPart}[1]{\part{#1}}
