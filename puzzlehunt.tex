@@ -5,6 +5,7 @@
 \phUseAuthorWithTitle
 
 \phMarkDraft % comment out to remove draft watermark
+\phShowPageNumbers % comment out to hide page numbers
 
 % replace these with your image files
 \phSetBannerLogo{example-image-16x10.pdf}
@@ -12,14 +13,8 @@
 
 \begin{document}
 
-
-\frontmatter % Sets roman page numbers (iv)
-
 \phTitlePage % Prints title page.
 \phTableOfContents % Prints table of contents
-
-
-\mainmatter % Sets arabic page numbers (4)
 
 \phPart{About}
 
@@ -55,17 +50,17 @@
 
   \lipsum[4-7]
 
-  \phWorksheet{Worksheet II}
+  \phWorksheet{Second worksheet}
 
-  \lipsum[8-11]
+  \lipsum[5-8]
 
-\phChapterWorksheet{Chapter beginning with Worksheet}{Its worksheet}
+\phChapterWorksheet{Chapter beginning with worksheet}{Beginning worksheet}
 
   \lipsum[5-7]
 
-  \phWorksheet{Another worksheet}
+  \phWorksheet{Additional worksheet}
 
-  \lipsum[80-82]
+  \lipsum[6-8]
 
 \phChapter{Other Features}
 

@@ -1,11 +1,9 @@
 % Class for puzzlehunt booklets
-% See http://en.wikibooks.org/wiki/LaTeX/Creating_Packages
-% and the version used with https://github.com/MaPPmath/hsc16
 % Use with:
 %     \documentclass{puzzlehunt}
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{puzzlehunt}[2018/01/02 PUZZLEHUNT]
+\ProvidesClass{puzzlehunt}[2018/06/24 PUZZLEHUNT]
 
 % No fancy options, please
 \DeclareOption*{
@@ -24,11 +22,9 @@
 % Space out paragraphs
 \setlength{\parskip}{6pt plus1pt minus1pt}
 
-
-
-
 % Graphics
 \RequirePackage{graphicx} % to display images
+\RequirePackage{tikz} % to create graphics
 
 % Datetime formatting
 \RequirePackage[yyyymmdd,hhmmss]{datetime}
@@ -49,7 +45,7 @@
 
 % Custom Title Page
 
-\newcommand{\phBannerLogo}{example-image-16x10.pdf}% uses mwe image
+\newcommand{\phBannerLogo}{example-image-16x10}% uses mwe image
 \newcommand{\phSetBannerLogo}[1]{\renewcommand{\phBannerLogo}{#1}}
 
 \newcommand{\phTitlePage}{%
@@ -63,106 +59,98 @@
 	{\large Version \today \par}
   \end{center}
 \end{titlepage}
+\addtocounter{page}{1}
 }
-
-\newcommand{\phTableOfContents}{\phSetChapterName{Table of Contents}\tableofcontents}
 
 
 % Custom Chapter/Section Headings
 \RequirePackage[explicit]{titlesec}
 \RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
 
-\pagestyle{plain}
-
-\newcommand{\phSquareLogo}{example-image-1x1.pdf}% uses mwe image
+\newcommand{\phSquareLogo}{example-image-1x1}% uses mwe image
 \newcommand{\phSetSquareLogo}[1]{\renewcommand{\phSquareLogo}{#1}}
 
-\newcommand{\phSetChapterDefaultStyle}[1]{
-  \titleformat{\chapter}[display]{}{}{0pt}
+\newcommand{\phChapterName}{Unknown Chapter}
+\newcommand{\phSetChapterName}[1]{\renewcommand{\phChapterName}{#1}}
+\newcommand{\phSectionName}{Unknown Section}
+\newcommand{\phSetSectionName}[1]{\renewcommand{\phSectionName}{#1}}
+
+\newcommand{\phPart}[1]{\part{#1}}
+\newcommand{\phChapter}[1]{%
+  \phSetChapterName{#1}%
+  \newpage
+  \addcontentsline{toc}{chapter}{\phChapterName}%
   {
     \Large
-    \vspace*{-1.5em}
     \includegraphics[height=1.2in]{\phSquareLogo}
     \begin{tabular}[b]{l}
       {\Large \phTitle \vspace{0.1in}} \\
       {\Huge \textbf{\phChapterName} \vspace{0.25in}}
     \end{tabular}
-    \vspace{1em}
   }
-  \titlespacing*{\chapter}{0pt}{*0}{0pt}
-}
-\newcommand{\phSetChapterWorksheetStyle}[2]{
-  \titleformat{\chapter}[display]{}{}{0pt}
-  {
-    \Large
-    \vspace*{-1.5em}
-    \includegraphics[height=1.2in]{\phSquareLogo}
-    \begin{tabular}[b]{l}
-      {\Large \phTitle \vspace{0.1in}} \\
-      {\Huge \textbf{\phChapterName} \vspace{0.1in}} \\
-      {\LARGE #2 \vspace{0.05in}}
-    \end{tabular}
-  }
-  \titlespacing*{\chapter}{0pt}{*0}{0pt}
-}
-
-\phSetChapterDefaultStyle{}
-
-
-\newcommand{\phSetSectionFancyStyle}[1]{
-  \titleformat{\section}[display]{}{}{0pt}
-  {
-    \Large
-    \includegraphics[height=1.2in]{\phSquareLogo}
-    \begin{tabular}[b]{l}
-      {\Large \phTitle \vspace{0.1in}} \\
-      {\Huge \textbf{\phChapterName} \vspace{0.1in}} \\
-      {\LARGE #1 \vspace{0.05in}}
-    \end{tabular}
-    \vspace{1em}
-  }
-  \titlespacing{\section}{0pt}{0pt}{0pt}
-}
-
-\newcommand{\phSetSectionSimpleStyle}[1]{
-  \titleformat{\section}[hang]{\normalfont\Large\bfseries}{}{0pt}{#1}
-  \titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
-}
-\newcommand{\phSetSectionEmptyStyle}[1]{
-  \titleformat{\section}[hang]{}{}{0pt}{}
-  \titlespacing*{\section}{0pt}{0pt}{0pt}
-}
-
-\phSetSectionSimpleStyle{}
-
-\newcommand{\phChapterName}{Unknown Chapter}
-\newcommand{\phSetChapterName}[1]{\renewcommand{\phChapterName}{#1}}
-
-\newcommand{\phPart}[1]{\part{#1}}
-\newcommand{\phChapter}[1]{%
-  \phSetChapterName{#1}%
-  \phSetChapterDefaultStyle{#1}%
-  \chapter{#1}%
 }
 \newcommand{\phChapterWorksheet}[2]{%
   \phSetChapterName{#1}%
-  \phSetChapterWorksheetStyle{#1}{#2}%
-  \chapter{#1}%
-  \phSetSectionEmptyStyle{#2}%
-  \section{#2}%
-}
-\newcommand{\phSection}[1]{%
-  \phSetSectionSimpleStyle{#1}
-  \section{#1}%
+  \phSetSectionName{#2}%
+  \newpage
+  \addcontentsline{toc}{chapter}{\phChapterName}%
+  \addcontentsline{toc}{section}{\phSectionName}%
+  {
+    \Large
+    \includegraphics[height=1.2in]{\phSquareLogo}
+    \begin{tabular}[b]{l}
+      {\Large \phTitle \vspace{0.1in}} \\
+      {\Huge \textbf{\phChapterName} \vspace{0.1in}} \\
+      {\LARGE \phSectionName \vspace{0.05in}}
+    \end{tabular}
+  }
 }
 \newcommand{\phWorksheet}[1]{%
+  \phSetSectionName{#1}%
   \newpage%
-  \phSetSectionFancyStyle{#1}%
-  \section{#1}%
+  \addcontentsline{toc}{section}{\phSectionName}%
+  {
+    \Large
+    \includegraphics[height=1.2in]{\phSquareLogo}
+    \begin{tabular}[b]{l}
+      {\Large \phTitle \vspace{0.1in}} \\
+      {\Huge \textbf{\phChapterName} \vspace{0.1in}} \\
+      {\LARGE \phSectionName \vspace{0.05in}}
+    \end{tabular}
+  }
+}
+\newcommand{\phSection}[1]{%
+  \phSetSectionName{#1}%
+
+  \vspace{1em}
+  \addcontentsline{toc}{section}{\phSectionName}%
+  {\Large\bf \phSectionName}
+
 }
 
+% Title of Contents
+  \titleformat{\chapter}[display]{}{}{0pt}
+  {
+    \Large
+    \includegraphics[height=1.2in]{\phSquareLogo}
+    \begin{tabular}[b]{l}
+      {\Large \phTitle \vspace{0.1in}} \\
+      {\Huge \textbf{\phChapterName} \vspace{0.25in}}
+    \end{tabular}
+  }
+  \titlespacing*{\chapter}{0pt}{*0}{0pt}
+\newcommand{\phTableOfContents}{\phSetChapterName{Table of Contents}\tableofcontents}
 
-
+% No indention
 \setlength{\parindent}{0pt}
 
 
@@ -185,9 +173,11 @@
   \end{center}
 }
 
+% Page numbering
+\pagenumbering{gobble}
+\newcommand{\phShowPageNumbers}{\pagenumbering{arabic}}
 
 % Box to fill in letters
-\RequirePackage{tikz}
 \newcommand{\phLetterBox}[2]{
   \begin{tikzpicture}
     \fill[white] (0,-2em) rectangle (2em,2em);
@@ -196,8 +186,6 @@
     \node at (1em,1em) {#2};
   \end{tikzpicture}
 }
-
-
 
 % Lorem ipsum generator (useful for mockups)
 \RequirePackage{lipsum}
