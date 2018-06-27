@@ -1,15 +1,15 @@
 \documentclass{puzzlehunt}
 
-\phSetTitle{Example Document for \texttt{puzzlehunt.cls}}
-\phSetAuthor{Steven Clontz}
-\phUseAuthorWithTitle
+\phSetTitle{MaPP Challenge '19 - To Infinity And Beyond}
+\phSetAuthor{Mathematical Puzzle Programs}
+% \phUseAuthorWithTitle
 
 \phMarkDraft % comment out to remove draft watermark
 \phShowPageNumbers % comment out to hide page numbers
 
 % replace these with your image files
-\phSetBannerLogo{example-image-16x10.pdf}
-\phSetSquareLogo{example-image-1x1.pdf}
+\phSetBannerLogo{assets/mapp-banner}
+\phSetSquareLogo{assets/mapp-square}
 
 \begin{document}
 
@@ -18,68 +18,19 @@
 
 \phPart{About}
 
-\phChapter{Using this document}
+  \input{about/scoresheet}
 
-  This document reflects all the features/functionality of
-  \texttt{puzzlehunt.cls}. To see how to use these features, compare
-  the PDF with the provided \texttt{.tex} file.
-
-\phPart{Features}
+\phPart{Puzzles}
 
 \phChapter{Plain chapter}
 
   \lipsum[10-13]
 
-\phChapter{Chapter with sections}
+\phPart{Solutions}
 
-  \lipsum[3]
+\phChapter{Solutions}
 
-  \phSection{A section}
-
-  \lipsum[4]
-
-  \phSection{Another section}
-
-  \lipsum[5-6]
-
-\phChapter{Chapter with worksheets}
-
-  \lipsum[1-3]
-
-  \phWorksheet{First worksheet}
-
-  \lipsum[4-7]
-
-  \phWorksheet{Second worksheet}
-
-  \lipsum[5-8]
-
-\phChapterWorksheet{Chapter beginning with worksheet}{Beginning worksheet}
-
-  \lipsum[5-7]
-
-  \phWorksheet{Additional worksheet}
-
-  \lipsum[6-8]
-
-\phChapter{Other Features}
-
-  \phSection{URL linking}
-
-    \phUrl{http://mappmath.org}
-
-  \phSection{Letter boxes}
-
-  \begin{center}
-    \phLetterBox{x}{y}\phLetterBox{}{}\phLetterBox{}{y}\phLetterBox{x}{}
-  \end{center}
-
-  \phSection{Example environment}
-
-  \begin{phExample}{Example}
-    \lipsum[2]
-  \end{phExample}
-
+  \lipsum[10-13]
 
 
 \end{document}
