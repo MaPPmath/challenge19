@@ -2,78 +2,156 @@
 \begin{tikzpicture}[x=0.5in,y=0.5in]
 \fill[white] (-6,-6) rectangle (6,6);
 \draw[step=1,gray,very thin] (-6,-6) grid (6,6);
-\begin{scope}[shift={(0.2,-0.3)}]
+\coordinate (gridStar) at (5,-1);
+\draw[line width=1pt,fill=gray] (gridStar) node[above=2pt] {GB} circle (4pt); 
+\coordinate (lowerLeftStar) at (-5.5,-5.5);
+\draw[line width=1pt,fill=gray] (lowerLeftStar) node[above=2pt] {asdf} circle (1.5pt); 
+\begin{scope}[
+every path/.style={line width=1pt,fill=gray},
+every path/.style={line width=1pt,fill=cyan},
+shift={(2.2,0.1)}
+]
+  \coordinate (MetaCenter) at (0,0);
+  \coordinate (Meta0) at (3,3.75);
+  \coordinate (Meta1) at (-4,-5);
+  \coordinate (Meta2) at (-3.75,5);
+  \coordinate (Meta3) at (3,-4);
+  \draw[dashdotted,fill=none]
+    (Meta0) --
+    (Meta1);
+  \draw[dashdotted,fill=none]
+    (Meta2) --
+    (Meta3);
+  \draw (MetaCenter) node[above=2pt] {YRSG} circle (4pt); 
+  \draw (Meta0) node[above=2pt] {asdf} circle (2pt); 
+  \draw (Meta1) node[above=2pt] {asdf} circle (3pt); 
+  \draw (Meta2) node[above=2pt] {asdf} circle (3pt); 
+  \draw (Meta3) node[above=2pt] {asdf} circle (1.5pt); 
+\end{scope}
+\begin{scope}[
+every path/.style={line width=1pt,fill=gray},
+every path/.style={line width=1pt,fill=blue},
+shift={(0.2,-0.3)}
+]
   %3-gon
-  \node (3GonCenter) at (0,0) {};
-  \node (3GonVertex0) at (-50:1.8) {};
-  \node (3GonVertex1) at (70:1.8) {};
-  \node (3GonVertex2) at (190:1.8) {};
-  \draw[line width=1pt,fill=blue] (3GonCenter) node[above] {3gon} circle (3pt); 
-  \draw[line width=1pt,fill=blue] (3GonVertex0) circle (2pt); 
-  \draw[line width=1pt,fill=blue] (3GonVertex1) circle (1.5pt); 
-  \draw[line width=1pt,fill=blue] (3GonVertex2) circle (2pt);
+  \coordinate (3GonCenter) at (0,0);
+  \coordinate (3GonVertex0) at (-50:1.8);
+  \coordinate (3GonVertex1) at (70:1.8);
+  \coordinate (3GonVertex2) at (190:1.8);
+  \draw[dotted,fill=none]
+    (3GonVertex0) --
+    (3GonVertex1) --
+    (3GonVertex2) --
+    cycle;
+  \draw (3GonCenter) node[above=2pt] {asdf} circle (3pt); 
+  \draw (3GonVertex0) node[above=2pt] {asdf} circle (2pt); 
+  \draw (3GonVertex1) node[above=2pt] {YBJRE} circle (4pt); 
+  \draw (3GonVertex2) node[above=2pt] {FGNE} circle (4pt);
   
   %4-gon
-  \begin{scope}[shift={(70:3)}]
-    \node (4GonCenter) at (0,0) {};
-    \node (4GonVertex0) at (3GonCenter) {};
-    \node (4GonVertex1) at (-20:3) {};
-    \node (4GonVertex2) at (70:3) {};
-    \node (4GonVertex3) at (160:3) {};
-    \draw[line width=1pt,fill=green] (4GonCenter) node[above] {4gon} circle (2pt); 
-    \draw[line width=1pt,fill=green] (4GonVertex1) circle (4pt); 
-    \draw[line width=1pt,fill=green] (4GonVertex2) circle (4pt); 
-    \draw[line width=1pt,fill=green] (4GonVertex3) circle (1.5pt); 
+  \begin{scope}[
+  every path/.style={line width=1pt,fill=gray},
+  every path/.style={line width=1pt,fill=green},
+  shift={(70:3)}
+  ]
+    \coordinate (4GonCenter) at (0,0);
+    \coordinate (4GonVertex0) at (3GonCenter);
+    \coordinate (4GonVertex1) at (-20:3);
+    \coordinate (4GonVertex2) at (70:3);
+    \coordinate (4GonVertex3) at (160:3);
+    \draw[dotted,fill=none]
+      (4GonVertex0) --
+      (4GonVertex1) --
+      (4GonVertex2) --
+      (4GonVertex3) --
+      cycle;
+    \draw (4GonCenter) node[above=2pt] {EBOBG} circle (4pt);  
+    \draw (4GonVertex1) node[above=2pt] {asdf} circle (1.5pt); 
+    \draw (4GonVertex2) node[above=2pt] {HFR} circle (4pt);  
+    \draw (4GonVertex3) node[above=2pt] {JBEQ} circle (4pt);  
 
     %7-gon
-    \begin{scope}[shift={(4GonVertex3)}]\begin{scope}[shift={(-160:2)}]
-      \node (7GonCenter) at (0,0) {};
-      \node (7GonVertex0) at (4GonVertex3) {};
-      \node (7GonVertex1) at (71.43:2) {};
-      \node (7GonVertex2) at (122.86:2) {};
-      \node (7GonVertex3) at (174.29:2) {};
-      \node (7GonVertex4) at (225.71:2) {};
-      \node (7GonVertex5) at (277.14:2) {};
-      \node (7GonVertex6) at (328.57:2) {};
-      \draw[line width=1pt,fill=yellow] (7GonCenter) node[above] {7gon} circle (1.5pt); 
-      \draw[line width=1pt,fill=yellow] (7GonVertex1) circle (3pt); 
-      \draw[line width=1pt,fill=yellow] (7GonVertex2) circle (3pt); 
-      \draw[line width=1pt,fill=yellow] (7GonVertex3) circle (2pt); 
-      \draw[line width=1pt,fill=yellow] (7GonVertex4) circle (1.5pt); 
-      \draw[line width=1pt,fill=yellow] (7GonVertex5) circle (2pt); 
-      \draw[line width=1pt,fill=yellow] (7GonVertex6) circle (2pt);
+    \begin{scope}[shift={(4GonVertex3)}]\begin{scope}[
+    every path/.style={line width=1pt,fill=gray},
+    every path/.style={line width=1pt,fill=yellow},
+    shift={(-160:2)}
+    ]
+      \coordinate (7GonCenter) at (0,0);
+      \coordinate (7GonVertex0) at (4GonVertex3);
+      \coordinate (7GonVertex1) at (71.43:2);
+      \coordinate (7GonVertex2) at (122.86:2);
+      \coordinate (7GonVertex3) at (174.29:2);
+      \coordinate (7GonVertex4) at (225.71:2);
+      \coordinate (7GonVertex5) at (277.14:2);
+      \coordinate (7GonVertex6) at (328.57:2);
+      \draw[dotted,fill=none]
+        (7GonVertex0) --
+        (7GonVertex1) --
+        (7GonVertex2) --
+        (7GonVertex3) --
+        (7GonVertex4) --
+        (7GonVertex5) --
+        (7GonVertex6) --
+        cycle;
+      \draw (7GonCenter) node[above=2pt] {asdf} circle (1.5pt); 
+      \draw (7GonVertex1) node[above=2pt] {asdf} circle (3pt); 
+      \draw (7GonVertex2) node[above=2pt] {PBQR} circle (4pt);  
+      \draw (7GonVertex3) node[above=2pt] {asdf} circle (2pt); 
+      \draw (7GonVertex4) node[above=2pt] {asdf} circle (1.5pt); 
+      \draw (7GonVertex5) node[above=2pt] {asdf} circle (2pt); 
+      \draw (7GonVertex6) node[above=2pt] {NG} circle (4pt);
 
       %line
-      \begin{scope}[shift={(7GonVertex4)}]
-        \node (lineNode0) at (0,0) {};
-        \node (lineNode1) at (0.5,-2) {};
-        \node (lineNode2) at (1,-4) {};
-        \node (lineNode3) at (1.5,-6) {};
-        \draw[line width=1pt,fill=purple] (lineNode1) circle (2pt); 
-        \draw[line width=1pt,fill=purple] (lineNode2) circle (3pt); 
-        \draw[line width=1pt,fill=purple] (lineNode3) circle (4pt);
+      \begin{scope}[
+      every path/.style={line width=1pt,fill=gray},
+      every path/.style={line width=1pt,fill=purple},
+      shift={(7GonVertex4)}
+      ]
+        \coordinate (lineStar0) at (0,0);
+        \coordinate (lineStar1) at (0.5,-2);
+        \coordinate (lineStar2) at (1,-4);
+        \coordinate (lineStar3) at (1.5,-6);
+        \draw[dashed,fill=none]
+          (lineStar0) --
+          (lineStar1) --
+          (lineStar2) --
+          (lineStar3);
+        \draw (lineStar1) node[above=2pt] {asdf} circle (2pt); 
+        \draw (lineStar2) node[above=2pt] {asdf} circle (3pt); 
+        \draw (lineStar3) node[above=2pt] {UVQQRA} circle (4pt);
 
         %vector
-        %\draw[dashed] (lineNode2) -- +(10,11);
-        \node (vectorNode) at ($(lineNode2)+(4,4.4)$) {}; 
-        \draw[line width=1pt,fill=orange] (vectorNode) circle (2pt);
+        \draw[dashed] (lineStar2) -- +(4,4.4);
+        \node (vectorStar) at ($(lineStar2)+(4,4.4)$) {}; 
+        \draw[line width=1pt,fill=gray] (vectorStar) node[above=2pt] {asdf} circle (2pt);
       \end{scope}
     \end{scope}\end{scope}
   \end{scope}
 
   %5-gon
-  \begin{scope}[shift={(3GonVertex0)}]\begin{scope}[shift={(-80:2.2)}]
-    \node (5GonCenter) at (0,0) {};
-    \node (5GonVertex0) at (28:2.2) {};
-    \node (5GonVertex1) at (3GonVertex0) {};
-    \node (5GonVertex2) at (172:2.2) {};
-    \node (5GonVertex3) at (244:2.2) {};
-    \node (5GonVertex4) at (316:2.2) {};
-    \draw[line width=1pt,fill=red] (5GonCenter) node[above] {5gon} circle (3pt);
-    \draw[line width=1pt,fill=red] (5GonVertex0) circle (1.5pt);
-    \draw[line width=1pt,fill=red] (5GonVertex2) circle (2pt);
-    \draw[line width=1pt,fill=red] (5GonVertex3) circle (4pt);
-    \draw[line width=1pt,fill=red] (5GonVertex4) circle (3pt);
+  \begin{scope}[shift={(3GonVertex0)}]\begin{scope}[
+  every path/.style={line width=1pt,fill=gray},
+  every path/.style={line width=1pt,fill=red},
+  shift={(-80:2.2)}
+  ]
+    \coordinate (5GonCenter) at (0,0);
+    \coordinate (5GonVertex0) at (28:2.2);
+    \coordinate (5GonVertex1) at (3GonVertex0);
+    \coordinate (5GonVertex2) at (172:2.2);
+    \coordinate (5GonVertex3) at (244:2.2);
+    \coordinate (5GonVertex4) at (316:2.2);
+    \draw[dotted,fill=none]
+      (5GonVertex0) --
+      (5GonVertex1) --
+      (5GonVertex2) --
+      (5GonVertex3) --
+      (5GonVertex4) --
+      cycle;
+    \draw (5GonCenter) node[above=2pt] {asdf} circle (3pt);
+    \draw (5GonVertex0) node[above=2pt] {FBYIR} circle (4pt);
+    \draw (5GonVertex2) node[above=2pt] {asdf} circle (2pt);
+    \draw (5GonVertex3) node[above=2pt] {CHMMYR} circle (4pt);
+    \draw (5GonVertex4) node[above=2pt] {asdf} circle (3pt);
   \end{scope}\end{scope}
 %    \foreach \a in {28,100,172,244,316} { %\a is the angle variable
 %      \draw[line width=1pt,fill=red] (\a:2.2) circle (3pt);
@@ -81,3 +159,7 @@
 \end{scope}
 \end{tikzpicture}
 \end{center}
+
+
+% USE CODE WORD ROBOT AT LOWER LEFT STAR TO SOLVE HIDDEN PUZZLE
+% HFR PBQR JBEQ EBOBG NG YBJRE YRSG FGNE GB FBYIR UVQQRA CHMMYR
