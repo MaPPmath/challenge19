@@ -1,0 +1,83 @@
+\begin{center}
+\begin{tikzpicture}[x=0.5in,y=0.5in]
+\fill[white] (-6,-6) rectangle (6,6);
+\draw[step=1,gray,very thin] (-6,-6) grid (6,6);
+\begin{scope}[shift={(0.2,-0.3)}]
+  %3-gon
+  \node (3GonCenter) at (0,0) {};
+  \node (3GonVertex0) at (-50:1.8) {};
+  \node (3GonVertex1) at (70:1.8) {};
+  \node (3GonVertex2) at (190:1.8) {};
+  \draw[line width=1pt,fill=blue] (3GonCenter) node[above] {3gon} circle (3pt); 
+  \draw[line width=1pt,fill=blue] (3GonVertex0) circle (2pt); 
+  \draw[line width=1pt,fill=blue] (3GonVertex1) circle (1.5pt); 
+  \draw[line width=1pt,fill=blue] (3GonVertex2) circle (2pt);
+  
+  %4-gon
+  \begin{scope}[shift={(70:3)}]
+    \node (4GonCenter) at (0,0) {};
+    \node (4GonVertex0) at (3GonCenter) {};
+    \node (4GonVertex1) at (-20:3) {};
+    \node (4GonVertex2) at (70:3) {};
+    \node (4GonVertex3) at (160:3) {};
+    \draw[line width=1pt,fill=green] (4GonCenter) node[above] {4gon} circle (2pt); 
+    \draw[line width=1pt,fill=green] (4GonVertex1) circle (4pt); 
+    \draw[line width=1pt,fill=green] (4GonVertex2) circle (4pt); 
+    \draw[line width=1pt,fill=green] (4GonVertex3) circle (1.5pt); 
+
+    %7-gon
+    \begin{scope}[shift={(4GonVertex3)}]\begin{scope}[shift={(-160:2)}]
+      \node (7GonCenter) at (0,0) {};
+      \node (7GonVertex0) at (4GonVertex3) {};
+      \node (7GonVertex1) at (71.43:2) {};
+      \node (7GonVertex2) at (122.86:2) {};
+      \node (7GonVertex3) at (174.29:2) {};
+      \node (7GonVertex4) at (225.71:2) {};
+      \node (7GonVertex5) at (277.14:2) {};
+      \node (7GonVertex6) at (328.57:2) {};
+      \draw[line width=1pt,fill=yellow] (7GonCenter) node[above] {7gon} circle (1.5pt); 
+      \draw[line width=1pt,fill=yellow] (7GonVertex1) circle (3pt); 
+      \draw[line width=1pt,fill=yellow] (7GonVertex2) circle (3pt); 
+      \draw[line width=1pt,fill=yellow] (7GonVertex3) circle (2pt); 
+      \draw[line width=1pt,fill=yellow] (7GonVertex4) circle (1.5pt); 
+      \draw[line width=1pt,fill=yellow] (7GonVertex5) circle (2pt); 
+      \draw[line width=1pt,fill=yellow] (7GonVertex6) circle (2pt);
+
+      %line
+      \begin{scope}[shift={(7GonVertex4)}]
+        \node (lineNode0) at (0,0) {};
+        \node (lineNode1) at (0.5,-2) {};
+        \node (lineNode2) at (1,-4) {};
+        \node (lineNode3) at (1.5,-6) {};
+        \draw[line width=1pt,fill=purple] (lineNode1) circle (2pt); 
+        \draw[line width=1pt,fill=purple] (lineNode2) circle (3pt); 
+        \draw[line width=1pt,fill=purple] (lineNode3) circle (4pt);
+
+        %vector
+        %\draw[dashed] (lineNode2) -- +(10,11);
+        \node (vectorNode) at ($(lineNode2)+(4,4.4)$) {}; 
+        \draw[line width=1pt,fill=orange] (vectorNode) circle (2pt);
+      \end{scope}
+    \end{scope}\end{scope}
+  \end{scope}
+
+  %5-gon
+  \begin{scope}[shift={(3GonVertex0)}]\begin{scope}[shift={(-80:2.2)}]
+    \node (5GonCenter) at (0,0) {};
+    \node (5GonVertex0) at (28:2.2) {};
+    \node (5GonVertex1) at (3GonVertex0) {};
+    \node (5GonVertex2) at (172:2.2) {};
+    \node (5GonVertex3) at (244:2.2) {};
+    \node (5GonVertex4) at (316:2.2) {};
+    \draw[line width=1pt,fill=red] (5GonCenter) node[above] {5gon} circle (3pt);
+    \draw[line width=1pt,fill=red] (5GonVertex0) circle (1.5pt);
+    \draw[line width=1pt,fill=red] (5GonVertex2) circle (2pt);
+    \draw[line width=1pt,fill=red] (5GonVertex3) circle (4pt);
+    \draw[line width=1pt,fill=red] (5GonVertex4) circle (3pt);
+  \end{scope}\end{scope}
+%    \foreach \a in {28,100,172,244,316} { %\a is the angle variable
+%      \draw[line width=1pt,fill=red] (\a:2.2) circle (3pt);
+%    }
+\end{scope}
+\end{tikzpicture}
+\end{center}
