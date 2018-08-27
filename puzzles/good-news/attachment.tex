@@ -1,0 +1,27 @@
+\newcommand{\gnDestA}{Home}
+\newcommand{\gnDestB}{B}
+\newcommand{\gnDestC}{C}
+\newcommand{\gnDestD}{D}
+\newcommand{\gnDestE}{E}
+\newcommand{\gnDestF}{F}
+\newcommand{\gnDestG}{G}
+\begin{center}
+\begin{tikzpicture}[x=0.8in,y=0.8in]
+\fill[white] (-4,0) rectangle (4,3);
+\draw[step=1,thin] (-3,0) grid (3,3);
+\node at (-4,1.5) {\gnDestA};
+\node at (4,1.5) {\gnDestA};
+\node[color=gray,anchor=east] at (-3,2.5) {\rotatebox{90}{Monday}};
+\node[color=gray,anchor=east] at (-3,1.5) {\rotatebox{90}{Wednesday}};
+\node[color=gray,anchor=east] at (-3,0.5) {\rotatebox{90}{Friday}};
+\node[color=gray,anchor=west] at (3,2.5) {\rotatebox{270}{Monday}};
+\node[color=gray,anchor=west] at (3,1.5) {\rotatebox{270}{Wednesday}};
+\node[color=gray,anchor=west] at (3,0.5) {\rotatebox{270}{Friday}};
+\node at (-2.5,2.5) {\textbf{\gnDestB}};
+\node at (-1.5,2.5) {\textbf{\gnDestC}};
+\node at (-0.5,2.5) {\textbf{\gnDestD}};
+\node at (0.5,2.5) {\textbf{\gnDestE}};
+\node at (1.5,2.5) {\textbf{\gnDestF}};
+\node at (2.5,2.5) {\textbf{\gnDestG}};
+\end{tikzpicture}
+\end{center}
