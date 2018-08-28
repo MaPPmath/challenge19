@@ -1,0 +1,142 @@
+On this system, your adventure takes you to a racous space saloon, swapping tales
+with Jan Duo, an infamous smuggler with a heart of gold.
+
+He explains to you that in the early days of hyperspace travel, engines could
+instantly transport ships between only certain locations on a six-lightyear continuum.
+These options were illustrated using a graph, where the horizontal coordinate
+represents starting positions, and the vertical coordinate represents ending positions.
+
+In Example A illustrated below, a ship at position \(0\) could be teleported
+to any position between \(0\) and \(6\), a ship at position \(0.5\) could only
+be teleported to positions \(4.5\) or \(6\), and a ship at any position between
+\(2\) and \(6\) could only be teleported to position \(6\).
+
+The goal of a hyperspace engine is to be \textbf{ideal}: the collection of possible
+destinations from each point using exactly one teleportation should be exactly the 
+same as the collection of possible destinations using exactly two teleportations.
+
+This means Example A is not ideal. Position \(1\) teleports to
+positions \(5\) and \(6\), but from positions \(5\) and \(6\), there are two
+problems: a new destination \(3\) can be reached, and the destiation \(5\) can
+no longer be reached.
+
+However, Example B is ideal. From \(0\), any position can be reached after either
+one or two teleportations. From \(2\), positions \(3\) and \(6\) can be reached
+after either one or two teleportations. From \(4\), position \(6\) can be reached
+after one or two teleportations. From \(5\), positions \(5\) and \(6\) can be
+reached after one or two teleportations. And so on.
+
+Jan suggests that you review your \textbf{Hyperspace Engines} document;
+perhaps the illustrations representing ideal engines will reveal a hidden message?
+
+\begin{center}
+\begin{tikzpicture}[x=0.2in,y=0.2in] 
+\begin{scope}[shift={(0,0)}] 
+\node[anchor=south] at (3,6) {Example A: non-ideal};
+\fill[white] (0,0) rectangle (6,6);
+\draw[step=1,thin,gray] (0,0) grid (6,6);
+\draw[line width=2pt] (0,0) -- (0,6) -- (6,6);
+\draw[line width=2pt] (0,4) -- (2,6);
+\draw[line width=2pt] (3,6) -- (3,3) -- (6,3);
+\foreach \x in {0,1,2,3,4,5,6} {
+  \node[anchor=north] at (\x,0) {\(\x\)};
+}
+\foreach \y in {0,1,2,3,4,5,6} {
+  \node[anchor=east] at (0,\y) {\(\y\)};
+}
+\end{scope}
+\begin{scope}[shift={(10,0)}] 
+\fill[white] (0,0) rectangle (6,6);
+\draw[step=1,thin,gray] (0,0) grid (6,6);
+\draw[line width=2pt] (0,0) -- (0,6) -- (6,6);
+\draw[line width=2pt] (0,4) -- (2,6);
+\draw[line width=2pt] (3,6) -- (3,3) -- (6,3);
+\foreach \x in {0,2,3,4,5,6} {
+  \node[anchor=north] at (\x,0) {\(\x\)};
+}
+\foreach \y in {0,1,2,3,4} {
+  \node[anchor=east] at (0,\y) {\(\y\)};
+}
+\node[anchor=north,draw,inner sep=2pt,shape=circle] at (1,0) {\(1\)};
+\node[anchor=east,draw,inner sep=2pt,shape=circle] at (0,5) {\(5\)};
+\node[anchor=east,draw,inner sep=2pt,shape=circle] at (0,6) {\(6\)};
+\node[fill=gray,draw,inner sep=2pt,shape=circle] at (1,5) {};
+\node[fill=gray,draw,inner sep=2pt,shape=circle] at (1,6) {};
+\end{scope}
+\begin{scope}[shift={(18,0)}] 
+\fill[white] (0,0) rectangle (6,6);
+\draw[step=1,thin,gray] (0,0) grid (6,6);
+\draw[line width=2pt] (0,0) -- (0,6) -- (6,6);
+\draw[line width=2pt] (0,4) -- (2,6);
+\draw[line width=2pt] (3,6) -- (3,3) -- (6,3);
+\foreach \x in {0,1,2,3,4} {
+  \node[anchor=north] at (\x,0) {\(\x\)};
+}
+\foreach \y in {0,1,2,4} {
+  \node[anchor=east] at (0,\y) {\(\y\)};
+}
+\node[anchor=north,draw,inner sep=2pt,shape=circle] at (5,0) {\(5\)};
+\node[anchor=north,draw,inner sep=2pt,shape=circle] at (6,0) {\(6\)};
+\node[anchor=east,draw,cross out] at (0,5) {\(5\)};
+\node[anchor=east,draw,inner sep=2pt,shape=circle] at (0,6) {\(6\)};
+\node[anchor=east,draw,inner sep=2pt,shape=circle] at (0,3) {\(3\)};
+\node[anchor=east,draw,inner sep=4pt,cross out] at (-0.2,3) {};
+\node[fill=gray,draw,inner sep=2pt,shape=circle] at (5,6) {};
+\node[fill=gray,draw,inner sep=2pt,shape=circle] at (6,6) {};
+\node[fill=gray,draw,inner sep=2pt,shape=circle] at (5,3) {};
+\node[fill=gray,draw,inner sep=2pt,shape=circle] at (6,3) {};
+\end{scope}
+
+\begin{scope}[shift={(0,-10)}] 
+\node[anchor=south] at (3,6) {Example B: ideal};
+\fill[white] (0,0) rectangle (6,6);
+\draw[step=1,thin,gray] (0,0) grid (6,6);
+\draw[line width=2pt] (0,0) -- (0,6) -- (6,6) -- (5,5);
+\draw[line width=2pt] (0,3) -- (3,3);
+\foreach \x in {0,1,2,3,4,5,6} {
+  \node[anchor=north] at (\x,0) {\(\x\)};
+}
+\foreach \y in {0,1,2,3,4,5,6} {
+  \node[anchor=east] at (0,\y) {\(\y\)};
+}
+\end{scope}
+\begin{scope}[shift={(10,-10)}] 
+\fill[white] (0,0) rectangle (6,6);
+\draw[step=1,thin,gray] (0,0) grid (6,6);
+\draw[line width=2pt] (0,0) -- (0,6) -- (6,6) -- (5,5);
+\draw[line width=2pt] (0,3) -- (3,3);
+\foreach \x in {0,1,3,4,5,6} {
+  \node[anchor=north] at (\x,0) {\(\x\)};
+}
+\foreach \y in {0,1,2,4,5} {
+  \node[anchor=east] at (0,\y) {\(\y\)};
+}
+\node[anchor=north,draw,inner sep=2pt,shape=circle] at (2,0) {\(2\)};
+\node[anchor=east,draw,inner sep=2pt,shape=circle] at (0,3) {\(3\)};
+\node[anchor=east,draw,inner sep=2pt,shape=circle] at (0,6) {\(6\)};
+\node[fill=gray,draw,inner sep=2pt,shape=circle] at (2,3) {};
+\node[fill=gray,draw,inner sep=2pt,shape=circle] at (2,6) {};
+\end{scope}
+\begin{scope}[shift={(18,-10)}] 
+\fill[white] (0,0) rectangle (6,6);
+\draw[step=1,thin,gray] (0,0) grid (6,6);
+\draw[line width=2pt] (0,0) -- (0,6) -- (6,6) -- (5,5);
+\draw[line width=2pt] (0,3) -- (3,3);
+\foreach \x in {0,1,2,4,5} {
+  \node[anchor=north] at (\x,0) {\(\x\)};
+}
+\foreach \y in {0,1,2,4,5} {
+  \node[anchor=east] at (0,\y) {\(\y\)};
+}
+\node[anchor=north,draw,inner sep=2pt,shape=circle] at (3,0) {\(3\)};
+\node[anchor=north,draw,inner sep=2pt,shape=circle] at (6,0) {\(6\)};
+\node[anchor=east,draw,inner sep=2pt,shape=circle] at (0,3) {\(3\)};
+\node[anchor=east,draw,inner sep=2pt,shape=circle] at (0,6) {\(6\)};
+\node[fill=gray,draw,inner sep=2pt,shape=circle] at (3,3) {};
+\node[fill=gray,draw,inner sep=2pt,shape=circle] at (3,6) {};
+\node[fill=gray,draw,inner sep=2pt,shape=circle] at (6,6) {};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+ 
