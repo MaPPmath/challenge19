@@ -102,7 +102,9 @@
   \phSetChapterName{#1}%
   \phSetSectionName{#2}%
   \newpage
+  \phantomsection
   \addcontentsline{toc}{chapter}{\phChapterName}%
+  \phantomsection
   \addcontentsline{toc}{section}{\phSectionName}%
   {
     \Large
@@ -117,6 +119,7 @@
 \newcommand{\phWorksheet}[1]{%
   \phSetSectionName{#1}%
   \newpage%
+  \phantomsection
   \addcontentsline{toc}{section}{\phSectionName}%
   {
     \Large
