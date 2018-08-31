@@ -1,0 +1,132 @@
+%https://tex.stackexchange.com/a/302908
+\documentclass{article}
+\usepackage{fp,amssymb,graphicx,xcolor}
+\makeatletter
+\def\strippt{\strip@pt}
+\makeatother
+\newsavebox\foobox
+\newcommand\slbox[2]{%
+  \slantbox[\result]{#2}%
+}%
+\newcommand{\slantbox}[2][30]{%
+        \mbox{%
+        \global\sbox{\foobox}{\textcolor{black}{#2}}%
+        \hskip\wd\foobox
+        \pdfsave
+        \pdfsetmatrix{1 0 #1 1}%
+        \llap{\usebox{\foobox}}%
+        \pdfrestore
+}}
+\newcommand\shslbox[3]{\slbox{#1}{\scalebox{#3}{#2}}}
+\newlength\yvp
+\newlength\xvp
+\newlength\yvpref
+\newlength\xvpref
+\yvpref 50pt\relax
+\xvpref -75pt\relax
+\xvp=\xvpref\relax
+\yvp=.3\yvpref\relax
+\newcommand\nextletter[1]{%
+  \FPdiv{\result}{\strippt\xvp}{-\strippt\yvp}%
+  \shslbox{\result}{#1}{\themagf}%
+  \addtolength{\xvp}{\wd\foobox}%
+}
+\newcommand\nextword[1]{\nextwordhelp #1\relax}
+\def\nextwordhelp#1#2\relax{%
+  \nextletter{#1}%
+  \ifx\relax#2\relax\sbox{\foobox}{\scalebox{\themagf}{~}}\addtolength{\xvp}{\wd\foobox}\usebox{\foobox}%
+  \else\nextwordhelp#2\relax\fi%  
+}
+\newcommand\nextline[1]{%
+  \parallax\setmagf\nextlinehelp #1 \relax \relax%
+  \vspace{-\dimexpr\baselineskip-\themagf\baselineskip}\par%
+  \addtolength\yvp{\themagf\baselineskip}\xvp\xvpref\relax%
+  \ignorespaces%
+}
+\def\nextlinehelp#1 #2\relax{%
+  \nextword{#1}%
+  \ifx\relax#2\relax\else\nextlinehelp #2\relax\fi%
+}
+\newcommand\parallax{%
+  \FPdiv{\result}{\strippt\yvp}{\strippt\yvpref}%
+  \FPsub{\result}{1}{\result}%
+  \hspace{-\result\xvpref}\addtolength{\xvp}{-\result\xvpref}%
+}
+\def\setmagf{\global\FPdiv{\themagf}{\strippt\yvp}{\strippt\yvpref}} 
+\parindent 0pt
+
+\begin{document}
+\pagecolor{white}\sffamily\bfseries%
+
+\nextline{For a time I tried carefully to detail}
+\nextline{biographies via large crawling textboxes.}
+\nextline{~}
+\nextline{Lamentably, composing all of the}
+\nextline{anecdotes when curbed by finite}
+\nextline{room, the current strategy now is}
+\nextline{cruelly killing sound handwriting.}
+\nextline{~}
+\nextline{To convince others to sidestep}
+\nextline{terrible lapses I erstwhile created,}
+\nextline{I entreat humankind, ban laughable}
+\nextline{cuneiform!}
+% to %2
+% detail %6
+% biographies %B, not 5
+% via %3
+% large %5
+% crawling %8
+% textboxes. %9
+% }
+% \nextline{~}
+% \nextline{%
+% Lamentably, %L, not 7
+% composing %9
+% all %3
+% of %2
+% the %3
+% anecdotes %A, not 8
+% when %4
+% curbed %6
+% by %2
+% finite %6
+% room, %4
+% the %3
+% current %C, not 3
+% strategy %8
+% now %3
+% is %2
+% cruelly %7
+% killing %K, not 9
+% sound %5
+% handwriting. %H, not 0
+% }
+% \nextline{~}
+% \nextline{
+% To %2
+% convince %8
+% others %O, not 8
+% to %2
+% sidestep %8
+% terrible %8
+% lapses %L, not 4
+% I %1
+% erstwhile %9
+% created, %7
+% I %1
+% entreat %E, not 6
+% humankind, %9
+% ban %3
+% laughable %9
+% cuneiform! %9
+% }
+%\nextline{In a galaxy, far, far away, the Empire}
+%\nextline{struck back.  Our hero, Luke Skywalker}
+%\nextline{nearly died, but didn't.  Meanwhile,}
+%\nextline{R2D2 and C3PO were stuck on the}
+%\nextline{planet Tatoine.}
+%\nextline{~}
+%\nextline{The evil Darth Vader was plotting}
+%\nextline{terrible deeds.}
+
+\end{document}
