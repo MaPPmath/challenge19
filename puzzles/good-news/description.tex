@@ -1,41 +1,74 @@
-Today's adventure begins as your team's ship launches into space.
-Space Fleet has provided you a 
-\textbf{Galaxy Map} to guide you on your way.
-(Actually, several copies have been provided to you! Take care of
-these copies, as you will refer to the Galaxy Map several times 
-throughout the adventure.) Each dot on the map refers to a
-different solar system, named on the map.
+On this system, you find yourself caught up in the misadventures of
+PlanEx, an
+intergalactic delivery company led by the eccentric old mathematician
+Dr. Farnswell. In the name of good relations between galaxies, you
+agree to help him with the following puzzle. 
 
-Space Fleet commands you to first visit the four 
-\textbf{Core Systems} of
-the galaxy. You can recognize a Core System by the fact that
-it is located in the middle of a regular polygon
-(all sides are the same length) formed by
-either three, four, five, or seven other systems. An
-example is shown below.
+\begin{itemize}
+\item PlanEx makes deliveries
+to six different planets (not including their own) on Mondays, Wednesdays,
+and Fridays. 
+\item Each day, a different company on each planet receives the
+delivery, listed below in order of Mon/Wed/Fri.
+\begin{itemize}
+\item Planet 1: Venus Co. / Rave Co. / Photon Co.
+\item Planet 2: Comet Co. / Solar Co. / Light Co.
+\item Planet 3: Belt Co. / Techno Co. / Alarm Co.
+\item Planet 4: Acme Co. / Alpha Co. / Uranium Co.
+\item Planet 5: Oxygen Co. / Helmet Co. / Neo Co.
+\item Planet 6: Star Co. / Orion Co. / Tele Co.
+\end{itemize}
+\item Their ship may travel directly between any two planets,
+  but due to galactic regulations, they may not travel directly
+  between the same two planets twice in the same week (regardless
+  of direction).
+\end{itemize}
+
+Can you help Farnswell complete his Delivery Schedule? If so,
+the missing company names will reveal one of the hidden codewords. 
 
 \begin{center}
-\begin{tikzpicture}[x=0.5in,y=0.5in]
-\draw[step=1,gray,very thin] (-3,-3) grid (3,3);
-\begin{scope}[
-every path/.style={line width=1pt,fill=gray},
-shift={(-0.2,0.1)}
-]
-  %3-gon
-  \coordinate (3GonCenter) at (0,0);
-  \coordinate (3GonVertex0) at (10:1.8);
-  \coordinate (3GonVertex1) at (130:1.8);
-  \coordinate (3GonVertex2) at (250:1.8);
-  \draw[dotted,fill=none]
-    (3GonVertex0) --
-    (3GonVertex1) --
-    (3GonVertex2) --
-    cycle;
-  \draw (3GonCenter) node[above=2pt] {Core System} circle (2pt); 
-  \draw (3GonVertex0) node[above=2pt] {Other System} circle (3pt); 
-  \draw (3GonVertex1) node[above=2pt] {Other System} circle (1.5pt); 
-  \draw (3GonVertex2) node[above=2pt] {Other System} circle (4pt);
-\end{scope}
+\begin{tikzpicture}[x=0.7in,y=0.7in]
+\coordinate (Vertex0) at (90:1);
+\coordinate (Vertex1) at (141.4:1);
+\coordinate (Vertex2) at (192.9:1);
+\coordinate (Vertex3) at (244.3:1);
+\coordinate (Vertex4) at (295.7:1);
+\coordinate (Vertex5) at (347.1:1);
+\coordinate (Vertex6) at (38.6:1);
+\node[above] at (Vertex0) {Home Planet};
+\node[left] at (Vertex1) {Planet 1};
+\node[left] at (Vertex2) {Planet 2};
+\node[below left] at (Vertex3) {Planet 3};
+\node[below right] at (Vertex4) {Planet 4};
+\node[right] at (Vertex5) {Planet 5};
+\node[right] at (Vertex6) {Planet 6};
+\draw 
+  (Vertex0) -- 
+  (Vertex1) -- 
+  (Vertex2) --
+  (Vertex3) -- 
+  (Vertex4) -- 
+  (Vertex5) --
+  (Vertex6) --
+  cycle; 
+\draw 
+  (Vertex0) -- 
+  (Vertex2) -- 
+  (Vertex4) --
+  (Vertex6) -- 
+  (Vertex1) -- 
+  (Vertex3) --
+  (Vertex5) --
+  cycle; 
+\draw 
+  (Vertex0) -- 
+  (Vertex3) -- 
+  (Vertex6) --
+  (Vertex2) -- 
+  (Vertex5) -- 
+  (Vertex1) --
+  (Vertex4) --
+  cycle; 
 \end{tikzpicture}
-\end{center}
-
+\end{center} 
