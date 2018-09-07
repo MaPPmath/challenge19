@@ -13,7 +13,7 @@
 \begin{scope}[shift={(14,21)}] %BAD L
 \fill[white] (0,0) rectangle (6,6);
 \draw[step=1,thin,gray] (0,0) grid (6,6);
-\draw[line width=2pt] (2,6) -- (0,0) -- (6,0); 
+\draw[line width=2pt] (0,6) -- (0,0) -- (6,0); 
 \end{scope}
 \begin{scope}[shift={(21,21)}] %BAD T
 \fill[white] (0,0) rectangle (6,6);
@@ -42,7 +42,7 @@
 \begin{scope}[shift={(21,14)}] %GOOD L
 \fill[white] (0,0) rectangle (6,6);
 \draw[step=1,thin,gray] (0,0) grid (6,6);
-\draw[line width=2pt] (6,0) -- (0,0) -- (0,6);
+\draw[line width=2pt] (6,0) -- (0,0) -- (6,6);
 \end{scope}
 
 \begin{scope}[shift={(0,7)}] %BAD U
@@ -71,7 +71,7 @@
 \begin{scope}[shift={(0,0)}] %BAD W
 \fill[white] (0,0) rectangle (6,6);
 \draw[step=1,thin,gray] (0,0) grid (6,6);
-\draw[line width=2pt] (0,5) -- (1,1) -- (3,4) -- (5,1) -- (6,5);
+\draw[line width=2pt] (0,5) -- (0,2) -- (1,1) -- (3,3) -- (5,1) -- (6,2) -- (6,5);
 \end{scope}
 \begin{scope}[shift={(7,0)}] %BAD R
 \fill[white] (0,0) rectangle (6,6);
