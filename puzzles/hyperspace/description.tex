@@ -12,19 +12,20 @@ represents starting positions, and the vertical coordinate represents ending pos
 %\(2\) and \(6\) could only be teleported to position \(6\).
 
 The goal of a hyperspace engine is to be ``ideal'': the collection of possible
-destinations from each point using exactly one teleportation should be exactly the 
-same as the collection of possible destinations using exactly two teleportations.
+destinations from any particular point using exactly one teleportation should be exactly the 
+same as the collection of possible destinations that can
+be reached from that point using exactly two teleportations.
 
 This means Example A is not ideal. Position \(1\) teleports to
 positions \(5\) and \(6\), but from positions \(5\) and \(6\), there are two
-problems: a new destination \(3\) can be reached, and the destiation \(5\) can
+problems: a new destination \(3\) can be reached, and the destination \(5\) can
 no longer be reached.
 
 However, Example B is ideal. From \(0\), any position can be reached after either
 one or two teleportations. From \(2\), positions \(3\) and \(6\) can be reached
 after either one or two teleportations. From \(4\), only position \(6\) can be reached
 after one or two teleportations. From \(5\), positions \(5\) and \(6\) can be
-reached after one or two teleportations. And so on.
+reached after one or two teleportations. And so on (even for fractional positions!).
 
 Jan suggests that you review your \textbf{Hyperspace Engines} document;
 perhaps the illustrations representing ideal engines will reveal a hidden message?
