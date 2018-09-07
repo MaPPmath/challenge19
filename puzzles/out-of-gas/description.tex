@@ -1,0 +1,27 @@
+Uh-oh... unforunately, you have now found yourself stranded
+in a stretch of empty space with no fuel left! Maybe these firefly-class
+engines aren't all they're cracked up to be...
+
+Your \textit{amazing} ship's engineer Faylee does have one possible suggestion. There is
+an emergency reserve tank that can be unlocked by utilizing the
+\textbf{Reserve Tank Switchboard}. Unfortunately, the instruction manual
+that comes with it is a bit vague...
+
+\begin{center}
+\begin{tikzpicture}[x=0.5in,y=0.5in]
+\fill[white] (0,0) rectangle (3,2);
+\draw[step=1,black!30] (0,0) grid (3,2);
+\node at (1.5,1.5) {\LARGE b};
+\node at (0.5,1.5) {\LARGE i};
+\node at (0.5,0.5) {\LARGE n};
+\node at (1.5,0.5) {\LARGE a};
+\node at (2.5,0.5) {\LARGE r};
+\node at (2.5,1.5) {\LARGE y};
+\foreach \coor in {
+  {(2,0)},
+  {(1,1)},
+  {(2,1)}
+}{ \fill[opacity=0.3] \coor rectangle +(1,1); }
+\node[circle,draw=black,fill=white,inner sep=1pt] at (1.5,1) {35};
+\end{tikzpicture}
+\end{center} 
