@@ -1,0 +1,32 @@
+\newcommand{\escapeKenKenLevel}[3]{
+  \begin{scope}[shift={#1}]
+    \fill[white] (0,0) rectangle (4,4);
+    \draw[black!40,step=1,dashed] (0,0) grid (4,4);
+    \draw[thick] (0,0) rectangle (4,4);
+%    \node[anchor=south] at (2,4) {Level #2};
+%    % \node[anchor=east] at (-0.3,2) {\rotatebox{90}{Rows}};
+%    \node[anchor=east] at (0,0.5) {A};
+%    \node[anchor=east] at (0,1.5) {B};
+%    \node[anchor=east] at (0,2.5) {C};
+%    \node[anchor=east] at (0,3.5) {D};
+%    % \node[anchor=north] at (2,-0.3) {Columns};
+%    \node[anchor=north] at (0.5,0) {A};
+%    \node[anchor=north] at (1.5,0) {B};
+%    \node[anchor=north] at (2.5,0) {C};
+%    \node[anchor=north] at (3.5,0) {D};
+    #3
+  \end{scope}
+}
+\newcommand{\escapeKenKenUp}[1]{
+  \node[anchor=south west] at #1 {\textcolor{black!60}{\footnotesize\(\uparrow\)}};
+}
+\newcommand{\escapeKenKenDown}[1]{
+  \node[anchor=south east] at ($#1+(1,0)$) {\textcolor{black!60}{\footnotesize\(\downarrow\)}};
+}
+\newcommand{\escapeKenKenEasy}[2]{
+  \node[blue] at ($#1+(0.5,0.5)$) {#2};
+}
+\newcommand{\escapeKenKenHard}[2]{
+  \node[blue] at ($#1+(0.5,0.5)$) {#2};
+}
+
