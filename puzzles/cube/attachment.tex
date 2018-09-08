@@ -1,0 +1,161 @@
+\newcommand{\escapeKenKenLevel}[3]{
+  \begin{scope}[shift={#1}]
+    \fill[white] (0,0) rectangle (4,4);
+    \draw[black!40,step=1,dashed] (0,0) grid (4,4);
+    \draw[thick] (0,0) rectangle (4,4);
+    \node[anchor=south] at (2,4) {Level #2};
+    % \node[anchor=east] at (-0.3,2) {\rotatebox{90}{Rows}};
+    \node[anchor=east] at (0,0.5) {A};
+    \node[anchor=east] at (0,1.5) {B};
+    \node[anchor=east] at (0,2.5) {C};
+    \node[anchor=east] at (0,3.5) {D};
+    % \node[anchor=north] at (2,-0.3) {Columns};
+    \node[anchor=north] at (0.5,0) {A};
+    \node[anchor=north] at (1.5,0) {B};
+    \node[anchor=north] at (2.5,0) {C};
+    \node[anchor=north] at (3.5,0) {D};
+    #3
+  \end{scope}
+}
+\newcommand{\escapeKenKenUp}[1]{
+  \node[anchor=south west] at #1 {\textcolor{black!60}{\footnotesize\(\uparrow\)}};
+}
+\newcommand{\escapeKenKenDown}[1]{
+  \node[anchor=south east] at ($#1+(1,0)$) {\textcolor{black!60}{\footnotesize\(\downarrow\)}};
+}
+\newcommand{\escapeKenKenEasy}[2]{
+  \node[blue] at ($#1+(0.5,0.5)$) {#2};
+}
+\newcommand{\escapeKenKenHard}[2]{
+  \node[red] at ($#1+(0.5,0.5)$) {#2};
+}
+
+\begin{center}
+\begin{tikzpicture}[x=0.5in,y=0.5in]
+  \draw[color=black!50,fill=black!10]
+                        (-0.5,-0.5) -- (9.5,-0.5) --
+                        (9.5,9.5) -- (-0.5,9.5) --
+                        (-0.5,4.6) -- (4.6,4.6) --
+                        (4.6,4.4) -- (-0.5,4.4) -- (-0.5,-0.5);
+  \escapeKenKenLevel{(0,0)}{A}{
+    \draw[thick] (1,0) -- (1,1) -- (0,1);
+    \draw[thick] (0,2) -- (2,2) -- (2,1) -- (3,1) -- (3,0);
+    \draw[thick] (2,2) -- (3,2) -- (3,1);
+    \draw[thick] (0,3) -- (1,3) -- (1,2);
+    \draw[thick] (2,4) -- (2,3) -- (3,3) -- (3,2);
+    \escapeKenKenUp{(0,0)};
+    \escapeKenKenUp{(2,1)};
+    \escapeKenKenUp{(0,2)};
+
+    \escapeKenKenEasy{(0,0)}{1};
+    \escapeKenKenEasy{(1,0)}{2};
+    \escapeKenKenEasy{(2,0)}{3};
+    \escapeKenKenEasy{(3,0)}{4};
+     \escapeKenKenHard{(0,1)}{4};
+     \escapeKenKenHard{(1,1)}{3};
+    \escapeKenKenEasy{(2,1)}{1};
+    \escapeKenKenEasy{(3,1)}{2};
+    \escapeKenKenEasy{(0,2)}{2};
+    \escapeKenKenEasy{(1,2)}{1};
+    \escapeKenKenEasy{(2,2)}{4};
+    \escapeKenKenEasy{(3,2)}{3};
+     \escapeKenKenHard{(0,3)}{3};
+     \escapeKenKenHard{(1,3)}{4};
+    \escapeKenKenEasy{(2,3)}{2};
+    \escapeKenKenEasy{(3,3)}{1};
+  }
+  \escapeKenKenLevel{(5,0)}{B}{
+    \draw[thick] (0,1) -- (1,1) -- (1,2) -- (2,2) -- (2,0);
+    \draw[thick] (1,4) -- (1,3) -- (2,3) -- (2,2);
+    \draw[thick] (2,4) -- (2,3) -- (3,3) -- (3,2) -- (4,2);
+    \escapeKenKenDown{(0,0)};
+    \escapeKenKenDown{(2,1)};
+    \escapeKenKenDown{(0,2)};
+    \escapeKenKenUp{(1,3)};
+    \escapeKenKenUp{(2,3)};
+    \escapeKenKenUp{(3,3)};
+
+     \escapeKenKenHard{(0,0)}{3};
+     \escapeKenKenHard{(1,0)}{4};
+    \escapeKenKenEasy{(2,0)}{2};
+    \escapeKenKenEasy{(3,0)}{1};
+     \escapeKenKenHard{(0,1)}{2};
+     \escapeKenKenHard{(1,1)}{1};
+    \escapeKenKenEasy{(2,1)}{4};
+    \escapeKenKenEasy{(3,1)}{3};
+     \escapeKenKenHard{(0,2)}{4};
+     \escapeKenKenHard{(1,2)}{3};
+    \escapeKenKenEasy{(2,2)}{1};
+    \escapeKenKenEasy{(3,2)}{2};
+    \escapeKenKenEasy{(0,3)}{1};
+    \escapeKenKenEasy{(1,3)}{2};
+    \escapeKenKenEasy{(2,3)}{3};
+    \escapeKenKenEasy{(3,3)}{4};
+  }
+  \escapeKenKenLevel{(5,5)}{C}{
+    \draw[thick] (0,2) -- (2,2) -- (2,0);
+    \draw[thick] (1,0) -- (1,1) -- (2,1);
+    \draw[thick] (0,3) -- (4,3);
+    \draw[thick] (3,0) -- (3,3);
+    \draw[thick] (2,2) -- (3,2);
+    \draw[thick] (2,3) -- (2,4);
+    \escapeKenKenDown{(1,3)};
+    \escapeKenKenDown{(2,3)};
+    \escapeKenKenDown{(3,3)};
+    \escapeKenKenUp{(1,0)};
+    \escapeKenKenUp{(0,1)};
+    \escapeKenKenUp{(3,1)};
+    \escapeKenKenUp{(0,2)};
+    \escapeKenKenUp{(1,2)};
+    \escapeKenKenUp{(0,3)};
+    \escapeKenKenUp{(1,3)};
+
+     \escapeKenKenHard{(0,0)}{2};
+     \escapeKenKenHard{(1,0)}{1};
+    \escapeKenKenEasy{(2,0)}{4};
+     \escapeKenKenHard{(3,0)}{3};
+     \escapeKenKenHard{(0,1)}{1};
+     \escapeKenKenHard{(1,1)}{2};
+    \escapeKenKenEasy{(2,1)}{3};
+     \escapeKenKenHard{(3,1)}{4};
+     \escapeKenKenHard{(0,2)}{3};
+     \escapeKenKenHard{(1,2)}{4};
+    \escapeKenKenEasy{(2,2)}{2};
+     \escapeKenKenHard{(3,2)}{1};
+    \escapeKenKenEasy{(0,3)}{4};
+    \escapeKenKenEasy{(1,3)}{3};
+    \escapeKenKenEasy{(2,3)}{1};
+    \escapeKenKenEasy{(3,3)}{2};
+  }
+  \escapeKenKenLevel{(0,5)}{D}{
+    \draw[thick] (2,0) -- (2,4);
+    \draw[thick] (0,3) -- (4,3);
+    \draw[thick] (4,1) -- (3,1) -- (3,2) -- (4,2);
+    \draw[thick] (0,2) -- (2,2) -- (1,2) -- (1,1) -- (0,1);
+    \escapeKenKenDown{(1,0)};
+    \escapeKenKenDown{(0,1)};
+    \escapeKenKenDown{(3,1)};
+    \escapeKenKenDown{(0,2)};
+    \escapeKenKenDown{(1,2)};
+    \escapeKenKenDown{(0,3)};
+    \escapeKenKenDown{(1,3)};
+
+     \escapeKenKenHard{(0,0)}{4};
+     \escapeKenKenHard{(1,0)}{3};
+     \escapeKenKenHard{(2,0)}{1};
+    \escapeKenKenEasy{(3,0)}{2};
+     \escapeKenKenHard{(0,1)}{3};
+     \escapeKenKenHard{(1,1)}{4};
+    \escapeKenKenEasy{(2,1)}{2};
+     \escapeKenKenHard{(3,1)}{1};
+     \escapeKenKenHard{(0,2)}{1};
+     \escapeKenKenHard{(1,2)}{2};
+     \escapeKenKenHard{(2,2)}{3};
+     \escapeKenKenHard{(3,2)}{4};
+    \escapeKenKenEasy{(0,3)}{2};
+    \escapeKenKenEasy{(1,3)}{1};
+    \escapeKenKenEasy{(2,3)}{4};
+    \escapeKenKenEasy{(3,3)}{3};
+  }
+\end{tikzpicture}
+\end{center}
