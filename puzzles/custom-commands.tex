@@ -1,6 +1,44 @@
 \newcommand{\morseDit}{{\large .}}
 \newcommand{\morseDah}{{\large -}}
 
+\newcounter{morseCounter}\setcounter{morseCounter}{0}
+\newcommand{\shortB}{
+\draw[fill=black!30] (\themorseCounter,0) circle (0.4);\stepcounter{morseCounter}
+}
+\newcommand{\longB}{
+\begin{scope}[shift={(\themorseCounter,0)}]
+\draw[fill=black!50] 
+  (22.5:0.4) --
+  (67.5:0.4) --
+  (112.5:0.4) --
+  (157.5:0.4) --
+  (202.5:0.4) --
+  (247.5:0.4) --
+  (292.5:0.4) --
+  (337.5:0.4) --
+  cycle;
+\end{scope}\stepcounter{morseCounter}
+}
+\newcommand{\spaceB}{}%\stepcounter{morseCounter}}
+\newcommand{\stLeft}[1]{
+\begin{scope}[shift={(\themorseCounter,-0.5)}]
+  \draw[->] (-0.5,0.5) -- (-0.5,0) to [out=-150,in=-30] (-#1.4,0);
+\end{scope}
+}
+\newcommand{\stRight}[1]{
+\begin{scope}[shift={(\themorseCounter,-0.5)}]
+  \draw[->] (-0.5,0.5) -- (-0.5,0) to [out=-30,in=-150] ($(#1,0)-(0.6,0)$);
+\end{scope}
+}
+\newcommand{\stStay}{
+\begin{scope}[shift={(\themorseCounter.5,-0.5)}]
+  \draw (-1,0.5) -- (-1,-0.25);
+  \draw[->] (-1,-0.25) arc (90:420:0.2);
+\end{scope}
+}
+\newcommand{\resetB}{\setcounter{morseCounter}{0}}
+
+
 \newcommand{\escapeKenKenLevel}[3]{
   \begin{scope}[shift={#1}]
     \fill[white] (0,0) rectangle (4,4);
