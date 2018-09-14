@@ -29,7 +29,8 @@ warp, spelling out a six-letter codeword!
 The signal for each dimension represents how
 the planets in a dimension would merge as the warping factor increases,
 with merged planets represented by bars and isolated planets represented
-by dots. The illustration below corresponds to the signal labeled \texttt{E}.
+by dots (with order not mattering). 
+The illustration below demonstrates this effect for \texttt{06-24-32-55-70-99}.
 
 \begin{center}
 \begin{tikzpicture}[x=0.3in,y=0.3in] 
@@ -52,44 +53,59 @@ by dots. The illustration below corresponds to the signal labeled \texttt{E}.
 \fill (7.0,0) circle (0.1) node[above] {\texttt{70}};
 \fill (9.9,0) circle (0.1) node[above] {\texttt{99}};
 \begin{scope}[shift={(0,-1)}]
-\fill (0.6,0) ellipse (0.42 and 0.1); 
-\fill (2.4,0) ellipse (0.42 and 0.1); 
-\fill (3.2,0) ellipse (0.42 and 0.1); 
-\fill (5.5,0) ellipse (0.42 and 0.1); 
-\fill (7.0,0) ellipse (0.42 and 0.1); 
-\fill (9.9,0) ellipse (0.42 and 0.1); 
+\draw (0.6,0) ellipse (0.42 and 0.1); 
+\draw (2.4,0) ellipse (0.42 and 0.1); 
+\draw (3.2,0) ellipse (0.42 and 0.1); 
+\draw (5.5,0) ellipse (0.42 and 0.1); 
+\draw (7.0,0) ellipse (0.42 and 0.1); 
+\draw (9.9,0) ellipse (0.42 and 0.1); 
+\fill (0.6,0) circle (0.1); 
+\draw[line width=4pt] (2.4,0) -- (3.2,0);
+\fill (5.5,0) circle (0.1);
+\fill (7.0,0) circle (0.1);
+\fill (9.9,0) circle (0.1);
 \end{scope}
 \begin{scope}[shift={(0,-2)}]
-\fill (0.6,0) ellipse (0.77 and 0.1); 
-\fill (2.4,0) ellipse (0.77 and 0.1); 
-\fill (3.2,0) ellipse (0.77 and 0.1); 
-\fill (5.5,0) ellipse (0.77 and 0.1); 
-\fill (7.0,0) ellipse (0.77 and 0.1); 
-\fill (9.9,0) ellipse (0.77 and 0.1); 
+\draw (0.6,0) ellipse (0.77 and 0.1); 
+\draw (2.4,0) ellipse (0.77 and 0.1); 
+\draw (3.2,0) ellipse (0.77 and 0.1); 
+\draw (5.5,0) ellipse (0.77 and 0.1); 
+\draw (7.0,0) ellipse (0.77 and 0.1); 
+\draw (9.9,0) ellipse (0.77 and 0.1); 
+\fill (0.6,0) circle (0.1); 
+\draw[line width=4pt] (2.4,0) -- (3.2,0);
+\draw[line width=4pt] (5.5,0) -- (7.0,0);
+\fill (9.9,0) circle (0.1);
 \end{scope}
 \begin{scope}[shift={(0,-3)}]
-\fill (0.6,0) ellipse (0.92 and 0.1); 
-\fill (2.4,0) ellipse (0.92 and 0.1); 
-\fill (3.2,0) ellipse (0.92 and 0.1); 
-\fill (5.5,0) ellipse (0.92 and 0.1); 
-\fill (7.0,0) ellipse (0.92 and 0.1); 
-\fill (9.9,0) ellipse (0.92 and 0.1); 
+\draw (0.6,0) ellipse (0.92 and 0.1); 
+\draw (2.4,0) ellipse (0.92 and 0.1); 
+\draw (3.2,0) ellipse (0.92 and 0.1); 
+\draw (5.5,0) ellipse (0.92 and 0.1); 
+\draw (7.0,0) ellipse (0.92 and 0.1); 
+\draw (9.9,0) ellipse (0.92 and 0.1); 
+\draw[line width=4pt] (0.6,0) -- (3.2,0);
+\draw[line width=4pt] (5.5,0) -- (7.0,0);
+\fill (9.9,0) circle (0.1);
 \end{scope}
 \begin{scope}[shift={(0,-4)}]
-\fill (0.6,0) ellipse (1.17 and 0.1); 
-\fill (2.4,0) ellipse (1.17 and 0.1); 
-\fill (3.2,0) ellipse (1.17 and 0.1); 
-\fill (5.5,0) ellipse (1.17 and 0.1); 
-\fill (7.0,0) ellipse (1.17 and 0.1); 
-\fill (9.9,0) ellipse (1.17 and 0.1); 
+\draw (0.6,0) ellipse (1.17 and 0.1); 
+\draw (2.4,0) ellipse (1.17 and 0.1); 
+\draw (3.2,0) ellipse (1.17 and 0.1); 
+\draw (5.5,0) ellipse (1.17 and 0.1); 
+\draw (7.0,0) ellipse (1.17 and 0.1); 
+\draw (9.9,0) ellipse (1.17 and 0.1); 
+\draw[line width=4pt] (0.6,0) -- (7.0,0);
+\fill (9.9,0) circle (0.1);
 \end{scope}
 \begin{scope}[shift={(0,-5)}]
-\fill (0.6,0) ellipse (1.47 and 0.1); 
-\fill (2.4,0) ellipse (1.47 and 0.1); 
-\fill (3.2,0) ellipse (1.47 and 0.1); 
-\fill (5.5,0) ellipse (1.47 and 0.1); 
-\fill (7.0,0) ellipse (1.47 and 0.1); 
-\fill (9.9,0) ellipse (1.47 and 0.1); 
+\draw (0.6,0) ellipse (1.47 and 0.1); 
+\draw (2.4,0) ellipse (1.47 and 0.1); 
+\draw (3.2,0) ellipse (1.47 and 0.1); 
+\draw (5.5,0) ellipse (1.47 and 0.1); 
+\draw (7.0,0) ellipse (1.47 and 0.1); 
+\draw (9.9,0) ellipse (1.47 and 0.1); 
+\draw[line width=4pt] (0.6,0) -- (9.9,0);
 \end{scope}
 \end{tikzpicture}
 \end{center} 
