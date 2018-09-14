@@ -2,13 +2,22 @@
 \begin{tikzpicture}[x=0.5in,y=0.5in]
 \fill[white] (-6,-6) rectangle (6,6);
 \draw[step=1,black!30,very thin] (-6,-6) grid (6,6);
+\draw[step=3,black!60,thin] (-6,-6) grid (6,6);
+\node at (-4.5,-6.5) {\LARGE A};
+\node at (-1.5,-6.5) {\LARGE B};
+\node at (1.5,-6.5) {\LARGE C};
+\node at (4.5,-6.5) {\LARGE D};
+\node at (-6.5,-4.5) {\LARGE 1};
+\node at (-6.5,-1.5) {\LARGE 2};
+\node at (-6.5,1.5) {\LARGE 3};
+\node at (-6.5,4.5) {\LARGE 4};
 \coordinate (gridStar) at (5,-1);
 \draw[line width=1pt,fill=gray] (gridStar) node[above=2pt] {GB} circle (4pt); 
 \coordinate (lowerLeftStar) at (-5.5,-5.5);
 \draw[line width=1pt,fill=gray] (lowerLeftStar) node[above=2pt] {DULL} circle (1.5pt); 
 \begin{scope}[
 every path/.style={line width=1pt,fill=gray},
-every path/.style={line width=1pt,fill=cyan},
+%every path/.style={line width=1pt,fill=cyan},
 shift={(2.2,0.1)}
 ]
   \coordinate (MetaCenter) at (0,0);
@@ -16,12 +25,12 @@ shift={(2.2,0.1)}
   \coordinate (Meta1) at (-4,-5);
   \coordinate (Meta2) at (-3.75,5);
   \coordinate (Meta3) at (3,-4);
-  \draw[dashdotted,fill=none]
-    (Meta0) --
-    (Meta1);
-  \draw[dashdotted,fill=none]
-    (Meta2) --
-    (Meta3);
+%  \draw[dashdotted,fill=none]
+%    (Meta0) --
+%    (Meta1);
+%  \draw[dashdotted,fill=none]
+%    (Meta2) --
+%    (Meta3);
   \draw (MetaCenter) node[above=2pt] {YRSG} circle (4pt);%hidden 
   \draw (Meta0) node[above=2pt] {SPROUT} circle (2pt); 
   \draw (Meta1) node[above=2pt] {COAXAL} circle (3pt); 
@@ -30,7 +39,7 @@ shift={(2.2,0.1)}
 \end{scope}
 \begin{scope}[
 every path/.style={line width=1pt,fill=gray},
-every path/.style={line width=1pt,fill=blue},
+%every path/.style={line width=1pt,fill=blue},
 shift={(0.2,-0.3)}
 ]
   %3-gon
@@ -38,11 +47,11 @@ shift={(0.2,-0.3)}
   \coordinate (3GonVertex0) at (-50:1.8);
   \coordinate (3GonVertex1) at (70:1.8);
   \coordinate (3GonVertex2) at (190:1.8);
-  \draw[dotted,fill=none]
-    (3GonVertex0) --
-    (3GonVertex1) --
-    (3GonVertex2) --
-    cycle;
+%  \draw[dotted,fill=none]
+%    (3GonVertex0) --
+%    (3GonVertex1) --
+%    (3GonVertex2) --
+%    cycle;
   \draw (3GonCenter) node[above=2pt] {MIRROR} circle (3pt); 
   \draw (3GonVertex0) node[above=2pt] {PROTRACT} circle (2pt); 
   \draw (3GonVertex1) node[above=2pt] {YBJRE} circle (4pt); %hidden
@@ -51,7 +60,7 @@ shift={(0.2,-0.3)}
   %4-gon
   \begin{scope}[
   every path/.style={line width=1pt,fill=gray},
-  every path/.style={line width=1pt,fill=green},
+%  every path/.style={line width=1pt,fill=green},
   shift={(70:3)}
   ]
     \coordinate (4GonCenter) at (0,0);
@@ -59,12 +68,12 @@ shift={(0.2,-0.3)}
     \coordinate (4GonVertex1) at (-20:3);
     \coordinate (4GonVertex2) at (70:3);
     \coordinate (4GonVertex3) at (160:3);
-    \draw[dotted,fill=none]
-      (4GonVertex0) --
-      (4GonVertex1) --
-      (4GonVertex2) --
-      (4GonVertex3) --
-      cycle;
+%    \draw[dotted,fill=none]
+%      (4GonVertex0) --
+%      (4GonVertex1) --
+%      (4GonVertex2) --
+%      (4GonVertex3) --
+%      cycle;
     \draw (4GonCenter) node[above=2pt] {EBOBG} circle (4pt);  %hidden
     \draw (4GonVertex1) node[above=2pt] {NUZZLE} circle (1.5pt); 
     \draw (4GonVertex2) node[above=2pt] {HFR} circle (4pt);  %hidden
@@ -73,7 +82,7 @@ shift={(0.2,-0.3)}
     %7-gon
     \begin{scope}[shift={(4GonVertex3)}]\begin{scope}[
     every path/.style={line width=1pt,fill=gray},
-    every path/.style={line width=1pt,fill=yellow},
+%    every path/.style={line width=1pt,fill=yellow},
     shift={(-160:2)}
     ]
       \coordinate (7GonCenter) at (0,0);
@@ -84,15 +93,15 @@ shift={(0.2,-0.3)}
       \coordinate (7GonVertex4) at (225.71:2);
       \coordinate (7GonVertex5) at (277.14:2);
       \coordinate (7GonVertex6) at (328.57:2);
-      \draw[dotted,fill=none]
-        (7GonVertex0) --
-        (7GonVertex1) --
-        (7GonVertex2) --
-        (7GonVertex3) --
-        (7GonVertex4) --
-        (7GonVertex5) --
-        (7GonVertex6) --
-        cycle;
+%      \draw[dotted,fill=none]
+%        (7GonVertex0) --
+%        (7GonVertex1) --
+%        (7GonVertex2) --
+%        (7GonVertex3) --
+%        (7GonVertex4) --
+%        (7GonVertex5) --
+%        (7GonVertex6) --
+%        cycle;
       \draw (7GonCenter) node[above=2pt] {SPUNKY} circle (1.5pt); 
       \draw (7GonVertex1) node[above=2pt] {MIXER} circle (3pt); 
       \draw (7GonVertex2) node[above=2pt] {PBQR} circle (4pt);  %hidden
@@ -104,24 +113,24 @@ shift={(0.2,-0.3)}
       %line
       \begin{scope}[
       every path/.style={line width=1pt,fill=gray},
-      every path/.style={line width=1pt,fill=purple},
+%      every path/.style={line width=1pt,fill=purple},
       shift={(7GonVertex4)}
       ]
         \coordinate (lineStar0) at (0,0);
         \coordinate (lineStar1) at (0.1,-1.8);
         \coordinate (lineStar2) at (0.2,-3.6);
         \coordinate (lineStar3) at (0.3,-5.4);
-        \draw[dashed,fill=none]
-          (lineStar0) --
-          (lineStar1) --
-          (lineStar2) --
-          (lineStar3);
+%        \draw[dashed,fill=none]
+%          (lineStar0) --
+%          (lineStar1) --
+%          (lineStar2) --
+%          (lineStar3);
         \draw (lineStar1) node[above=2pt] {HEARTED} circle (2pt); 
         \draw (lineStar2) node[above=2pt] {PRISMOID} circle (3pt); 
         \draw (lineStar3) node[above=2pt] {UVQQRA} circle (4pt);%hidden
 
         %vector
-        \draw[dashed] (lineStar2) -- +(3,3);
+%        \draw[dashed] (lineStar2) -- +(3,3);
         \node (vectorStar) at ($(lineStar2)+(3,3)$) {}; 
         \draw[line width=1pt,fill=gray] (vectorStar) node[above=2pt] {SPOTLESS} circle (2pt);
       \end{scope}
@@ -131,7 +140,7 @@ shift={(0.2,-0.3)}
   %5-gon
   \begin{scope}[shift={(3GonVertex0)}]\begin{scope}[
   every path/.style={line width=1pt,fill=gray},
-  every path/.style={line width=1pt,fill=red},
+%  every path/.style={line width=1pt,fill=red},
   shift={(-80:2.2)}
   ]
     \coordinate (5GonCenter) at (0,0);
@@ -140,13 +149,13 @@ shift={(0.2,-0.3)}
     \coordinate (5GonVertex2) at (172:2.2);
     \coordinate (5GonVertex3) at (244:2.2);
     \coordinate (5GonVertex4) at (316:2.2);
-    \draw[dotted,fill=none]
-      (5GonVertex0) --
-      (5GonVertex1) --
-      (5GonVertex2) --
-      (5GonVertex3) --
-      (5GonVertex4) --
-      cycle;
+%    \draw[dotted,fill=none]
+%      (5GonVertex0) --
+%      (5GonVertex1) --
+%      (5GonVertex2) --
+%      (5GonVertex3) --
+%      (5GonVertex4) --
+%      cycle;
     \draw (5GonCenter) node[above=2pt] {OUTBID} circle (3pt);
     \draw (5GonVertex0) node[above=2pt] {FBYIR} circle (4pt);%hidden
     \draw (5GonVertex2) node[above=2pt] {CIRCA} circle (2pt);

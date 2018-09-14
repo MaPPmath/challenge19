@@ -2,6 +2,15 @@
 \begin{tikzpicture}[x=0.5in,y=0.5in]
 \fill[white] (-6,-6) rectangle (6,6);
 \draw[step=1,black!30,very thin] (-6,-6) grid (6,6);
+\draw[step=3,black!60,thin] (-6,-6) grid (6,6);
+\node at (-4.5,-6.5) {\LARGE A};
+\node at (-1.5,-6.5) {\LARGE B};
+\node at (1.5,-6.5) {\LARGE C};
+\node at (4.5,-6.5) {\LARGE D};
+\node at (-6.5,-4.5) {\LARGE 1};
+\node at (-6.5,-1.5) {\LARGE 2};
+\node at (-6.5,1.5) {\LARGE 3};
+\node at (-6.5,4.5) {\LARGE 4};
 \coordinate (gridStar) at (5,-1);
 \draw[line width=1pt,fill=gray] (gridStar) node[above=2pt] {GB} circle (4pt); 
 \coordinate (lowerLeftStar) at (-5.5,-5.5);
