@@ -8,21 +8,21 @@ rampages your ship!
 Fortunately, there is protocol for such a situation. On your
 \textbf{Ship Floorplan}, several stations are marked where you
 can position a robotic guard to defend against the alien. 
-Five guards must be placed such that every point within the floorplan
+Five guards must be deployed such that every point within the floorplan
 is visible in a straight line from at least one guard.
 
 An example for two guards is illustrated below. As long as one
-guard is placed within the top two rows, and the other guard is
+guard is deployed within the top two rows, and the other guard is
 placed within the bottom two rows, the entire area of the floor
-is safely monitored. But if a guard is placed on any of the
-three stations in the middle row,
+is safely monitored. But if a guard is deployed on any of the
+three stations in the middle row (spelling \texttt{BAD}),
 there's no possible way for a second guard to monitor both
-the top and bottom unaccounted areas.
+the top and bottom uncovered areas.
 
-Your task is to identify all the guard stations on the ship that
-are unusable when using only five guards. 
+Your task is to locate all the guard stations on the ship that
+should NOT be used when deploying only five guards. 
 In addition to saving your crew from
-certain death, you will also reveal a hidden codeword!
+certain death, the letters from these stations spell a hidden codeword!
 
 \begin{center}
 \begin{tikzpicture}[x=0.3in,y=0.3in]
@@ -31,8 +31,11 @@ certain death, you will also reveal a hidden codeword!
 \hysExample
 %\node[anchor=north] at (4,0) {2 guards, 3 unusable stations};
 \node[draw,cross out] at (1,3) {};
+\node[above left] at (1,3) {\footnotesize{B}};
 \node[draw,cross out] at (2,3) {};
+\node[above left] at (2,3) {\footnotesize{A}};
 \node[draw,cross out] at (3,3) {};
+\node[above left] at (3,3) {\footnotesize{D}};
 \end{tikzpicture}
 
 \begin{tikzpicture}[x=0.3in,y=0.3in]

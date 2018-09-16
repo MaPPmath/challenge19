@@ -28,16 +28,15 @@
 \draw[line width=2pt] (0,0) -- (6,6) -- (6,0);
 \draw[line width=2pt] (3,3) -- (6,3);
 \end{scope}
-\begin{scope}[shift={(7,14)}] %BAD J
+\begin{scope}[shift={(7,14)}] %BAD P
 \fill[white] (0,0) rectangle (6,6);
 \draw[step=1,thin,gray] (0,0) grid (6,6);
-\draw[line width=2pt] (5,6) -- (6,6) -- (6,1) -- (5,0) -- (1,0) -- (0,1);
+\draw[line width=2pt] (0,0) -- (0,6) -- (5,6) -- (6,5) -- (6,4) -- (5,3) -- (0,3);
 \end{scope}
-\begin{scope}[shift={(14,14)}] %BAD Q
+\begin{scope}[shift={(14,14)}] %BAD O
 \fill[white] (0,0) rectangle (6,6);
 \draw[step=1,thin,gray] (0,0) grid (6,6);
-\draw[line width=2pt] (0,1) -- (0,6) -- (5,6) -- (5,1) -- cycle; 
-\draw[line width=2pt] (4,2) -- (6,0); 
+\draw[line width=2pt] (0,1) -- (0,5) -- (1,6) -- (5,6) -- (6,5) -- (6,1) -- (5,0) -- (1,0) -- cycle; 
 \end{scope}
 \begin{scope}[shift={(21,14)}] %GOOD L
 \fill[white] (0,0) rectangle (6,6);
@@ -56,10 +55,10 @@
 \draw[line width=2pt] (0,0) -- (6,6) -- (6,0);
 \draw[line width=2pt] (2,2) -- (6,2);
 \end{scope}
-\begin{scope}[shift={(14,7)}] %BAD N
+\begin{scope}[shift={(14,7)}] %BAD C
 \fill[white] (0,0) rectangle (6,6);
 \draw[step=1,thin,gray] (0,0) grid (6,6);
-\draw[line width=2pt] (0,0) -- (0,6) -- (6,0) -- (6,6); 
+\draw[line width=2pt] (6,1) -- (5,0) -- (2,0) -- (0,2) -- (0,4) -- (2,6) -- (5,6) -- (6,5); 
 \end{scope}
 \begin{scope}[shift={(21,7)}] %GOOD X
 \fill[white] (0,0) rectangle (6,6);
