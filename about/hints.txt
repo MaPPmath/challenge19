@@ -1,0 +1,61 @@
+1 	15:00 	All that matters for (most of) this puzzle are the six planets, so begin by labeling each company on the Delivery Schedule with its planet. For example, label Comet Co. with Planet 2. 	0 pts 	free 	- 	- 	
+2 	15:00 	The ship travels from Planet 4 to the Home Planet on Wednesday, so the ship cannot deliver to Acme Co. last on Monday. 	0 pts 	free 	- 	- 	
+3 	15:00 	The first deliveries on Wednesday and Friday must be to either Planet 3 or Planet 5, since the ship already travels between the Home Planet and the other Planets at other times. Of course, Planet 5 is already scheduled at another time on Wednesday. 	0 pts 	free 	- 	- 	
+4 	15:00 	On Monday, ACME is delivered to before STAR. On Wednesday, deliveries are made in order to TECHNO, RAVE, and ORION. From this information, there's only one way to deliver to the remaining companies on Friday without repeating travel between two planets. 	0 pts 	free 	- 	- 	
+5 	15:00 	To extract the codeword, look carefully at the names of the companies being delivered to. Only the company names that were originally missing from the schedule are used. 	0 pts 	free 	- 	- 	
+6 	15:00 	The first letters of the companies filled into the schedule on Monday and Wednesday spell ASTRO. The four companies missing from the schedule on Friday give the last four letters of this nine-letter space-themed codeword. 	0 pts 	free 	- 	- 	
+
+1 	15:00 	To get the hang of this puzzle, see if you can cover the ship with five guards. Since you're looking for the unusable locations, you can rule out any locations that are used in a valid covering. 	0 pts 	free 	- 	- 	
+2 	15:00 	For example, placing guards at the coordinates (1,1) [D], (3,5) [N], (5,9) [E], (7,13) [R], and (5,17) [E] would cover the entire floorplan. That means that these letters are not used to solve the puzzle. 	0 pts 	free 	- 	- 	
+3 	15:00 	Locations at intersections, such as (3,7) [N] and (7,9) [R], provide a lot of visibility to a guard, so they won't be used in the puzzle solution. 	0 pts 	free 	- 	- 	
+4 	15:00 	Just because it's a dead-end doesn't mean it isn't usable by a guard. For example, (1,9) [W] can be used along with (1,1) [D], (3,5) [N], (7,13) [R], and (5,17) [E] to cover the whole ship. 	0 pts 	free 	- 	- 	
+5 	15:00 	The location (3,11) [A] is unusable: no matter how you place the other four guards, some area will be left unmonitored. This means that "A" will be a part of the puzzle solution. 	0 pts 	free 	- 	- 	
+6 	15:00 	Each of the five horizontal rows of the ship floorplan will need its own guard in order for the entire ship to be monitored. Take the six letters not appearing in those rows to spell the solution to this puzzle. 	0 pts 	free 	- 	- 	
+
+1 	20:00 	Start this puzzle by checking to see that you understand how the example pattern 06-24-32-55-70-99 matches the signal E on the Dimensional Signals sheet. 	0 pts 	free 	- 	- 	
+2 	20:00 	In the example pattern 06-24-32-55-70-99, 24 and 32 merge into a "bar" first, since they are the closest numbers. At each step, another point merges into a nearby point or bar. To match the signals sheet, you only need to count the number of points and bars appearing at each step. 	0 pts 	free 	- 	- 	
+3 	20:00 	For the pattern 02-45-49-60-67-85 listed first on the Dimensional Signals sheet, the pair 45-49 merges first, followed by 60-67, forming two separated bars. But the next listed pattern 11-28-38-43-72-84 merges 38-43 first followed by 28-38, resulting in a single bar connecting 28-38-43. So these patterns will correspond to different signals. 	0 pts 	free 	- 	- 	
+4 	20:00 	The signal labeled N is not used in the puzzle solution, but it matches both of the patterns 01-02-04-07-95-99 and 01-05-93-96-98-99 as each pattern features two separate clusters of numbers that won't connect until the final step. 	0 pts 	free 	- 	- 	
+5 	20:00 	It might be useful to measure the distance between the numbers. So rather than working with the first listed pattern 02-45-49-60-67-85, you might focus on the distances 43/4/11/7/18. The smaller the distance, the sooner the numbers connect in the signal. 	0 pts 	free 	- 	- 	
+6 	20:00 	The first pattern matches the signal labeled V, and the last pattern matches X. The solution to this puzzle is then a six-letter word beginning with V and ending with X. 	0 pts 	free 	- 	- 	
+
+1 	20:00 	The key to this puzzle is understanding the two engine examples. It's easier to check if an engine is non-ideal, since you just need to find one broken input. But that doesn't mean every input is broken in a non-ideal engine: in Example A, 3 teleports to everything between 3 and 6, and everything between 3 and 6 teleports between 3 and 6. 	0 pts 	free 	- 	- 	
+2 	20:00 	W is ideal between 1 and 5: for example, 4 teleports to 2, and 2 teleports to 2 as well. But can you figure out why it's not ideal overall? 	0 pts 	free 	- 	- 	
+3 	20:00 	In W, 6 can't directly teleport to 1, but it can teleport to 5 which then can teleport to 1. So overall W is non-ideal and won't be used in the puzzle solution. 	0 pts 	free 	- 	- 	
+4 	20:00 	Almost every location for the engine shaped like the letter O shows why it isn't an ideal engine: 0 and 6 can reach everything between 1 and 5, but everything between 1 and 5 can only reach 0 and 6. In fact, only 0.5 and 5.5 behave like an ideal engine should, since they both reach 0.5 and 5.5 directly. In any case, O can be ruled out from the final answer. 	0 pts 	free 	- 	- 	
+5 	20:00 	The A in the second row is an ideal engine. For example, 5 teleports to 3 and 5, and the possible locations for 3 and 5 are exactly 3 and 5. This means A will be used in the solution. 	0 pts 	free 	- 	- 	
+6 	20:00 	Both As are ideal, so the solution to this puzzle is a six-letter word that uses two As. The letters do not need to be rearranged from their original order to spell the answer. 	0 pts 	free 	- 	- 	
+
+1 	20:00 	The words "short" and "long" seem to refer to a certain code available on your Reference Sheet. 	0 pts 	free 	- 	- 	
+2 	20:00 	The circles are dots and the octagons are dashes, but without spaces it's not clear where to break up the symbols. Maybe it'd be easier to encode what you already have first. 	0 pts 	free 	- 	- 	
+3 	20:00 	The word CREWMEN matches the final line on the Bleeps and Bloops page. But something else needs to be done before you can use its "3rd letter". 	0 pts 	free 	- 	- 	
+4 	20:00 	The key to this puzzle is the phrase "space travel", which clues how to transform each of the given words into new space-themed words. 	0 pts 	free 	- 	- 	
+5 	20:00 	The word CREWMEN transforms to the word CASTOR (the name of a star) by way of "space travel". But how? 	0 pts 	free 	- 	- 	
+6 	20:00 	The arrows show how to move the spaces between letters around, changing how the Morse code should be decoded to letters. After moving the spaces, use the "Nth letter" clues to extract the solution; for example, the "3rd letter" of CASTOR is S. 	0 pts 	free 	- 	- 	
+
+1 	20:00 	Understanding the meaning of the letters "IBY NAR" is a good place to start. Maybe they should be read in a different order. 	0 pts 	free 	- 	- 	
+2 	20:00 	The letters "IBY NAR" explain how the number 35 translates to the shading of the example. 	0 pts 	free 	- 	- 	
+3 	20:00 	Starting at the top and going counter-clockwise, the letters "IBR NAR" spell "BINARY", and the number 35 in binary is 100011. 	0 pts 	free 	- 	- 	
+4 	20:00 	The 0s and 1s in each binary number should be represented by unshaded and shaded squares, respectively. 	0 pts 	free 	- 	- 	
+5 	20:00 	The only two unshaded squares on the outside boundary of the Reserve Tank Switchboard are adjacent to the upper-right and lower-right corners. 	0 pts 	free 	- 	- 	
+6 	20:00 	When shaded correctly, the Reserve Tank Switchboard will resemble a maze. Solving it should give you the solution to this puzzle. 	0 pts 	free 	- 	- 	
+
+1 	20:00 	This is mostly a logic puzzle, sort of like a 3D Sudoku. Every number 1 through 3 must appear in each row/column/tower. 	0 pts 	free 	- 	- 	
+2 	20:00 	Cages must either add or multiply to twelve. The puzzle doesn't say which cages use which operation, but logically there's only one way to make everything work out. 	0 pts 	free 	- 	- 	
+3 	20:00 	The cage including cell AD has only four cells which cannot add to 12. This means you will need to fill in the numbers 1, 2, 2, and 3. This also means you only have one choice for filling in AD. 	0 pts 	free 	- 	- 	
+4 	20:00 	AD must be filled in with 2. The cage including CF must add to 12, which tells you if 2 should be filled into CF or not. 	0 pts 	free 	- 	- 	
+5 	20:00 	BF and CE must be filled in with 2s. 	0 pts 	free 	- 	- 	
+6 	20:00 	BE=1, HK=2, and NQ=3. Use the filled-in numbers to simplify each mathematical expression to a number between 1 and 26. 	0 pts 	free 	- 	- 	
+
+1 	20:00 	The words "lengths" and "pie" seem to be emphasized for some reason. 	0 pts 	free 	- 	- 	
+2 	20:00 	While some of the words in the message are certainly esoteric, you won't need a dictionary to solve this puzzle as their meanings are irrelevant to the solution. 	0 pts 	free 	- 	- 	
+3 	20:00 	The word "length" refers to word length. 	0 pts 	free 	- 	- 	
+4 	20:00 	Count the lengths of the first few words of the message. Do those numbers sound familiar? 	0 pts 	free 	- 	- 	
+5 	20:00 	The digits of pi are available on your Reference Sheet. 	0 pts 	free 	- 	- 	
+6 	20:00 	Nine words don't match the digits of pi. Each of these words gives a letter of the puzzle solution. 	0 pts 	free 	- 	- 	
+
+1 	0:00 	There are no real hints available, but feel free to ask Game Control for clarifications on the rules for this optimization puzzle.
+
+1 	30:00 	This is a "metapuzzle", so you'll need to use the solutions to other puzzles to solve it. With four Main Puzzles, four Cryptic Puzzles, and four insignias, maybe you can find a way to fit everything into place.
+
+This was your only hint for this one, so good luck! 	
